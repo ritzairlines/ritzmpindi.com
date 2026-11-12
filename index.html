@@ -1,0 +1,1359 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Ritz Mpindi - Personal Website</title><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+
+<style>
+/* Layout: broadsheet — masthead rule bar, meta rail against an oversized type lockup, case studies shown first with their own result tables, then a serif feature well and a numbered index. */
+:root{
+  --paper:#FBFAF8;--paper-2:#F1EFE9;--ink:#111113;--red:#CE3118;--grey:#55555A;--rule:#111113;
+  --c-bridger:#1F4FD8;--c-conv:#CE3118;--c-bfx:#6B3FD1;--c-5c:#0F7A6E;--c-jav:#9A5408;--ink-2:#1C2029;
+  --disp:"Anton",Impact,"Haettenschweiler",sans-serif;
+  --text:"Newsreader",Georgia,"Times New Roman",serif;
+  --util:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--text);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+.wrap{max-width:72rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;text-wrap:balance;font-weight:400}
+a{color:inherit}
+.kicker{font-family:var(--util);font-size:.6875rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin:0 0 .7rem}
+.hd{font-family:var(--disp);font-size:clamp(2rem,5.5vw,3.5rem);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;max-width:32rem}
+
+.masthead{position:sticky;top:env(safe-area-inset-top,0px);z-index:29;background:var(--paper);border-bottom:2px solid var(--rule)}
+.masthead > .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.65rem}
+.mh-name{font-family:var(--disp);font-size:1.125rem;letter-spacing:.02em;text-transform:uppercase;text-decoration:none}
+.mh-nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.35rem clamp(.7rem,2.2vw,1.6rem)}
+.mh-nav a{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding-bottom:2px;border-bottom:2px solid transparent;transition:border-color .15s,color .15s}
+.mh-nav a:hover,.mh-nav a:focus-visible{color:var(--red);border-color:var(--red)}
+
+.ticker{background:var(--red);color:#fff;overflow:hidden;border-bottom:2px solid var(--rule)}
+.tk-track{display:flex;width:max-content;animation:slide 48s linear infinite}
+.tk-track>div{display:flex}
+.tk-track span{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:.55rem 1.25rem;white-space:nowrap;line-height:1.6}
+@keyframes slide{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+
+/* press ticker — inverted, runs the other way */
+.ticker2{background:var(--ink);color:var(--paper);overflow:hidden;border-bottom:2px solid var(--rule)}
+.tk2-track{display:flex;width:max-content;animation:slide2 56s linear infinite}
+.tk2-track>div{display:flex;align-items:center}
+.tk2-track span{padding:.65rem 1.15rem;white-space:nowrap;line-height:1.6}
+@keyframes slide2{from{transform:translate3d(-50%,0,0)}to{transform:translate3d(0,0,0)}}
+.tk2-label{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.tk2-sans{font-family:var(--util);font-size:.9375rem;font-weight:600;letter-spacing:-.015em}
+.tk2-serif{font-family:var(--text);font-size:1.0625rem;font-weight:500;font-style:italic}
+.tk2-caps{font-family:var(--util);font-size:.875rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.tk2-div{color:rgba(251,250,248,.28);padding-inline:.5rem}
+
+.hero{border-bottom:10px solid var(--rule)}
+.hero .wrap{padding-block:clamp(1.75rem,4vw,3rem) clamp(2rem,4vw,3rem);display:grid;grid-template-columns:1fr;gap:1.5rem}
+.rail{display:flex;flex-wrap:wrap;gap:.3rem 1.5rem;border-top:3px solid var(--red);padding-top:.6rem}
+.rail p{margin:0;font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+.rail p b{color:var(--ink);font-weight:600}
+.lockup{font-family:var(--disp);font-size:clamp(4rem,24vw,15rem);line-height:.92;letter-spacing:-.025em;text-transform:uppercase}
+.lockup span{display:block}
+.lockup .nm-first{color:var(--red)}
+.lockup em{font-style:normal;color:var(--red)}
+.deck{font-family:var(--text);font-size:clamp(1.375rem,3.4vw,2.125rem);line-height:1.25;max-width:32rem;margin:1.75rem 0 0}
+.deck i{font-style:italic;color:var(--red)}
+.acts{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.75rem}
+.btn{font-family:var(--util);font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:.85rem 1.65rem;border:2px solid var(--ink);border-radius:999px;display:inline-block;background:none;color:var(--ink);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn-fill{background:var(--red);border-color:var(--red);color:#fff}
+.btn-fill:hover,.btn-fill:focus-visible{background:var(--ink);border-color:var(--ink)}
+.btn-line:hover,.btn-line:focus-visible{background:var(--ink);color:var(--paper)}
+@media (min-width:56rem){
+  .hero .wrap{grid-template-columns:9.5rem minmax(0,1fr);gap:2.5rem;align-items:start}
+  .rail{flex-direction:column;gap:.5rem}
+}
+
+/* film strip */
+.film{background:var(--ink);overflow:hidden;position:relative;border-bottom:2px solid var(--rule);padding-block:15px}
+.film::before,.film::after{content:"";position:absolute;left:0;right:0;height:15px;z-index:2;
+  background-image:repeating-linear-gradient(90deg,transparent 0 11px,rgba(251,250,248,.9) 11px 27px,transparent 27px 38px);
+  background-size:38px 6px;background-repeat:repeat-x;background-position:0 center;
+  animation:sprock 2.6s linear infinite}
+.film::before{top:0}
+.film::after{bottom:0}
+@keyframes sprock{from{background-position-x:0}to{background-position-x:38px}}
+.film-track{display:flex;width:max-content;animation:filmroll 72s linear infinite}
+@keyframes filmroll{from{transform:translate3d(-50%,0,0)}to{transform:translate3d(0,0,0)}}
+.film-set{display:flex}
+.frame{flex:none;margin:0 3px}
+.frame img{display:block;height:clamp(150px,24vw,260px);width:clamp(150px,24vw,260px);object-fit:cover}
+
+.figs{border-bottom:2px solid var(--rule)}
+.figs .wrap{padding-block:clamp(2rem,4vw,2.75rem)}
+.figgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:2rem 1.75rem}
+.fig{min-width:0;border-top:2px solid var(--rule);padding-top:.8rem}
+.fig dt{font-family:var(--disp);font-size:clamp(2.25rem,5.4vw,3.5rem);line-height:.85;letter-spacing:-.025em;color:var(--red);font-variant-numeric:tabular-nums}
+.fig dd{margin:.7rem 0 0;font-family:var(--util);font-size:.75rem;font-weight:500;line-height:1.45;color:var(--grey)}
+
+.work-sec{border-bottom:2px solid var(--rule)}
+.work-sec .wrap{padding-block:clamp(2.5rem,5vw,3.5rem)}
+.workintro{max-width:38rem;margin:1.1rem 0 0;color:var(--grey)}
+/* Ritz dropdown */
+.mh-ritz{display:inline-flex;align-items:center;gap:.4rem;padding:0 0 2px;margin:0;background:none;border:0;border-bottom:2px solid transparent;font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);cursor:pointer;transition:color .15s,border-color .15s}
+.mh-ritz::after{content:"";width:0;height:0;border-left:.28rem solid transparent;border-right:.28rem solid transparent;border-top:.34rem solid currentColor;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.mh-ritz:hover,.mh-ritz:focus-visible,.mh-ritz[aria-expanded="true"]{color:var(--red);border-color:var(--red)}
+.mh-ritz[aria-expanded="true"]::after{transform:rotate(180deg)}
+.ritz-panel{position:absolute;left:0;right:0;top:100%;background:var(--paper-2);border-bottom:10px solid var(--rule);box-shadow:0 24px 48px rgba(17,17,19,.18);max-height:calc(100vh - 3.25rem);max-height:calc(100dvh - 3.25rem);overflow-y:auto;overscroll-behavior:contain;visibility:hidden;opacity:0;transform:translateY(-12px);transition:opacity .25s,transform .4s cubic-bezier(.22,1,.36,1),visibility 0s linear .4s}
+.ritz-panel.open{visibility:visible;opacity:1;transform:none;transition:opacity .25s,transform .4s cubic-bezier(.22,1,.36,1),visibility 0s}
+.ritz-panel .wrap{padding-block:clamp(1.5rem,3.5vw,2.5rem) clamp(2rem,4vw,3rem)}
+.rp-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
+.rp-head .kicker{margin:0}
+.rp-close{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:none;border:2px solid var(--ink);border-radius:999px;color:var(--ink);padding:.45rem .9rem;cursor:pointer;transition:background .15s,color .15s}
+.rp-close:hover,.rp-close:focus-visible{background:var(--ink);color:var(--paper)}
+@media (prefers-reduced-motion:reduce){.ritz-panel,.ritz-panel.open{transform:none;transition:none}}
+.about-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+@media (min-width:56rem){.about-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:3rem}}
+.about-film{margin:0;min-width:0}
+.about-film .shot-play{aspect-ratio:16/9;border:2px solid var(--rule);background:var(--ink);overflow:hidden}
+.about-film figcaption{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:baseline;justify-content:space-between;margin-top:.75rem}
+.about-cap{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.about-film .watch{margin-top:0}
+.cover-feature{position:absolute;inset:0;pointer-events:none}
+.cover-feature .tc-brand{position:absolute;left:auto;right:.9rem;top:.8rem}
+.cf-name{position:absolute;right:.9rem;bottom:.8rem;text-align:right;font-family:var(--disp);font-size:clamp(1.25rem,2.6vw,2.1rem);line-height:.95;text-transform:uppercase;color:var(--paper)}
+.about-copy .pullquote{font-size:clamp(1.5rem,3.2vw,2.4rem)}
+.about-more{margin-top:2.75rem;border-top:2px solid var(--rule);padding-top:1.25rem}
+.about-more .kicker{margin:0 0 1.1rem}
+.feats{display:grid;grid-template-columns:1fr;gap:1.75rem}
+@media (min-width:40rem){.feats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:64rem){.feats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.feat{margin:0;min-width:0}
+.feat .shot-play{aspect-ratio:16/9;border:2px solid var(--rule);background:var(--ink);overflow:hidden}
+.feat figcaption{margin-top:.75rem}
+.feat-title{display:block;font-family:var(--disp);font-size:1.0625rem;line-height:1.15;text-transform:uppercase;color:var(--ink)}
+.feat-sub{display:block;margin-top:.3rem;font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.feat .watch{margin-top:.55rem}
+.statement{border-bottom:2px solid var(--rule);background:var(--paper-2)}
+.statement .wrap{padding-block:clamp(2.75rem,6vw,4.5rem)}
+.pullquote{font-family:var(--disp);font-size:clamp(1.625rem,5vw,3.25rem);line-height:1.08;letter-spacing:-.02em;text-transform:uppercase;margin:0;max-width:52rem}
+.pullquote em{font-style:normal;color:var(--red)}
+#cvform button{margin-top:1.75rem}
+.works,.convworks{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:2.5rem 1.75rem;margin-top:1.75rem}
+.work{min-width:0}
+.shot{aspect-ratio:4/3;max-width:100%;border:2px solid var(--rule);background:var(--paper-2);display:grid;place-content:center;overflow:hidden;position:relative}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot .ph{font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);text-align:center;padding:.5rem}
+.shot.empty{background:repeating-linear-gradient(45deg,transparent,transparent 7px,rgba(17,17,19,.05) 7px,rgba(17,17,19,.05) 14px),var(--paper-2)}
+.wmeta{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:.8rem}
+.wno{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.08em;color:var(--red);font-variant-numeric:tabular-nums}
+.tag{font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--ink);padding:.26rem .65rem;border-radius:999px}
+.work h3{font-family:var(--disp);font-size:1.375rem;text-transform:uppercase;letter-spacing:-.005em;line-height:1.1;margin-top:.5rem}
+.work p{margin:.45rem 0 0;font-size:.9375rem;line-height:1.5;color:var(--grey)}
+.partners{font-family:var(--util);font-size:.625rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);margin-top:.6rem;line-height:1.7}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.4rem .75rem;margin-top:.9rem;border-top:2px solid var(--red);padding-top:.6rem}
+.stats>div{min-width:0}
+.stats dt{font-family:var(--util);font-size:.5rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);line-height:1.3}
+.stats dd{margin:.25rem 0 0;font-family:var(--disp);font-size:1.125rem;line-height:1.1;letter-spacing:-.01em;color:var(--ink);font-variant-numeric:tabular-nums}
+.lead-work{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:2rem;border-top:2px solid var(--rule);padding-top:1.75rem}
+.lead-work .shot{aspect-ratio:16/10}
+.lead-work h3{font-size:clamp(1.75rem,4.6vw,2.75rem);margin-top:.6rem}
+.lead-work .sum{font-size:1.0625rem;max-width:32rem}
+.lead-work .stats dd{font-size:1.5rem}
+@media (min-width:56rem){.lead-work{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:2.5rem;align-items:center}}
+.filters{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-top:2.25rem;border-top:2px solid var(--rule);padding-top:1.25rem}
+.filters button{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:.55rem 1.1rem;border:2px solid var(--ink);border-radius:999px;background:none;color:var(--ink);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.filters button:hover{background:var(--ink);color:var(--paper)}
+.filters button[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.wcount{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin:0 0 0 auto;font-variant-numeric:tabular-nums}
+
+.conv-sec{border-bottom:2px solid var(--rule)}
+.conv-sec .wrap{padding-block:clamp(2.5rem,5vw,3.5rem)}
+.convintro{max-width:38rem;margin:1.1rem 0 0;color:var(--grey)}
+.convgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2.25rem 1.75rem;margin-top:2.25rem}
+.cv{min-width:0;border-top:2px solid var(--rule);padding-top:.9rem}
+.cvhead{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.cv h3{font-family:var(--disp);font-size:1.5rem;text-transform:uppercase;letter-spacing:-.01em;line-height:1.05}
+.badge{font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--red);padding:.26rem .65rem;border-radius:999px}
+.since{font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);border:2px solid var(--rule);border-radius:999px;padding:.2rem .6rem}
+.cover-rr{background:var(--ink)}
+.rr-mark{font-family:var(--disp);font-size:clamp(1.75rem,5.5vw,3rem);line-height:1;letter-spacing:.01em;text-transform:uppercase;color:#fff;background:var(--red);padding:.3em .55em;display:inline-block}
+.cv .line{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:.5rem 0 0}
+.cv p.d{margin:.6rem 0 0;font-size:.9375rem;line-height:1.5;color:var(--grey)}
+.cvstats{margin:.85rem 0 0;border-top:2px solid var(--red);padding-top:.5rem;font-family:var(--util);font-size:.6875rem;font-weight:600;line-height:1.8;color:var(--ink)}
+.cvstats em{font-style:normal;color:var(--grey);font-weight:500}
+
+/* playable case study tiles */
+.shot-play{display:block;padding:0;width:100%;cursor:pointer;position:relative}
+.shot-play img{width:100%;height:100%;object-fit:cover;display:block}
+.shot-play iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.screen-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:3.4rem;height:3.4rem;border-radius:50%;background:var(--red);display:grid;place-content:center;transition:transform .25s cubic-bezier(.22,1,.36,1)}
+.screen-play::after{content:"";width:0;height:0;border-left:1rem solid var(--paper);border-top:.62rem solid transparent;border-bottom:.62rem solid transparent;margin-left:.22rem}
+.shot-play:hover .screen-play{transform:translate(-50%,-50%) scale(1.14)}
+.watch{display:inline-block;margin:.75rem 0 0;font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:2px solid var(--red);padding-bottom:2px}
+.watch:hover,.watch:focus-visible{color:var(--red)}
+@media (prefers-reduced-motion:reduce){.screen-play{transition:none}.shot-play:hover .screen-play{transform:translate(-50%,-50%)}}
+
+/* screening room */
+.screening{background:var(--ink);color:var(--paper);border-bottom:2px solid var(--rule)}
+.screening .wrap{padding-block:clamp(2.5rem,5vw,3.5rem)}
+.screening .kicker{color:var(--paper);opacity:.7}
+.screening .hd{color:var(--paper)}
+.screenintro{max-width:38rem;margin:1.1rem 0 0;color:rgba(251,250,248,.68)}
+.screens{display:grid;grid-template-columns:1fr;gap:2rem 1.75rem;margin-top:2.25rem}
+@media (min-width:40rem){.screens{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:64rem){.screens{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.cover-news{position:absolute;inset:0;background:radial-gradient(circle at 70% 35%,rgba(251,250,248,.13),transparent 62%),var(--ink)}
+.cn-net{position:absolute;top:.7rem;left:.75rem;display:flex;align-items:center;gap:.4rem;font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--paper)}
+.cn-net::before{content:"";width:.45rem;height:.45rem;border-radius:50%;background:var(--red)}
+.cover-news.on-img{background:none}
+.cover-news.on-img .cn-net{background:rgba(17,17,19,.78);padding:.3rem .55rem}
+@media (min-width:40rem){
+  .screen.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:1.75rem;align-items:end}
+  .screen.wide figcaption{margin-top:0;padding-bottom:.2rem}
+  .screen.wide .screen-title{font-size:clamp(1.5rem,3vw,2.25rem)}
+}
+@media (min-width:40rem) and (max-width:63.99rem){.screens .screen:last-child:nth-child(odd){grid-column:1/-1}}
+@media (min-width:64rem){.screens:has(> .screen:nth-child(9):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cover-title{position:absolute;inset:0;background:radial-gradient(circle at 30% 28%,rgba(251,250,248,.13),transparent 62%),var(--ink)}
+.tc-brand{position:absolute;top:.7rem;left:.75rem;font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:var(--red);padding:.28rem .55rem}
+.tc-name{position:absolute;left:.75rem;right:.75rem;bottom:.75rem;font-family:var(--disp);font-size:clamp(1.15rem,2.2vw,1.6rem);line-height:1;letter-spacing:-.005em;text-transform:uppercase;color:var(--paper)}
+.cn-chyron{position:absolute;left:0;right:0;bottom:.8rem;display:flex;align-items:stretch}
+.cn-chyron b{font-family:var(--disp);font-weight:400;font-size:.95rem;letter-spacing:.02em;text-transform:uppercase;color:#fff;background:var(--red);padding:.3rem .6rem;line-height:1.2}
+.cn-chyron span{flex:1;font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--paper);padding:.45rem .6rem;display:flex;align-items:center;white-space:nowrap;overflow:hidden}
+.screen{margin:0;min-width:0}
+.screen .shot-play{aspect-ratio:16/9;border:2px solid var(--paper);background:#1A1E27;overflow:hidden}
+.screen figcaption{margin-top:.85rem}
+.screen-title{display:block;font-family:var(--disp);font-size:1.1875rem;text-transform:uppercase;letter-spacing:-.005em;line-height:1.15}
+.screen-sub{display:block;margin-top:.3rem;font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(251,250,248,.6)}
+.screen .watch{color:var(--paper);margin-top:.65rem}
+.screen .watch:hover,.screen .watch:focus-visible{color:var(--red)}
+
+/* clients — colour by chapter */
+.clfilters button .dot{display:inline-block;width:.5rem;height:.5rem;border-radius:50%;background:var(--c);margin-right:.45rem;vertical-align:.05em}
+.clfilters button:hover{background:var(--c);border-color:var(--c);color:#fff}
+.clfilters button:hover .dot{background:#fff}
+.clfilters button[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:#fff}
+.clfilters button[aria-pressed="true"] .dot{background:#fff}
+.clcap{margin:1rem 0 0;max-width:48rem;padding-left:.8rem;border-left:4px solid var(--c);font-family:var(--util);font-size:.8125rem;font-weight:500;line-height:1.55;color:var(--ink);transition:border-color .2s}
+.clgrid{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));gap:.6rem}
+.cl{--c:var(--ink);min-width:0;min-height:5.4rem;padding:.75rem .85rem;background:var(--paper);background:color-mix(in srgb,var(--c) 10%,var(--paper));border:2px solid var(--rule);border-top:6px solid var(--c);display:flex;flex-direction:column;justify-content:space-between;gap:.45rem;transition:background .2s,color .2s,transform .25s cubic-bezier(.22,1,.36,1)}
+.cl[data-era="bridger"]{--c:var(--c-bridger)}
+.cl[data-era="conv"]{--c:var(--c-conv)}
+.cl[data-era="bfx"]{--c:var(--c-bfx)}
+.cl[data-era="5c"]{--c:var(--c-5c)}
+.cl[data-era="jav"]{--c:var(--c-jav)}
+.cl-name{font-family:var(--disp);font-size:1.0625rem;line-height:1.05;letter-spacing:-.005em;text-transform:uppercase;overflow-wrap:anywhere}
+.cl-era{font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+.cl-note{display:none;font-family:var(--util);font-size:.6875rem;font-weight:500;line-height:1.35}
+.cl:hover,.cl:focus-visible{background:var(--c);border-color:var(--c);color:#fff;transform:translateY(-3px)}
+.cl:hover .cl-era,.cl:focus-visible .cl-era{display:none}
+.cl:hover .cl-note,.cl:focus-visible .cl-note{display:block}
+.cl:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+
+/* venture network */
+.venture{margin-top:2.75rem;background:var(--ink);color:var(--paper);padding:clamp(1.5rem,3.5vw,2.5rem)}
+.venture .kicker{color:var(--paper);opacity:.7}
+.vh{font-family:var(--disp);font-weight:400;font-size:clamp(1.6rem,4vw,2.6rem);line-height:.95;text-transform:uppercase;color:var(--paper);margin:0}
+.vintro{margin:.8rem 0 0;max-width:38rem;font-size:.9375rem;color:rgba(251,250,248,.72)}
+.vgrid{display:grid;grid-template-columns:1fr;gap:1px;margin-top:1.75rem;background:rgba(251,250,248,.18);border:1px solid rgba(251,250,248,.18)}
+@media (min-width:40rem){.vgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:64rem){.vgrid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.vcard{min-width:0;background:var(--ink);padding:1.1rem 1rem 1.25rem;transition:background .2s}
+.vcard:hover{background:var(--ink-2)}
+.vcard h4{margin:0;font-family:var(--disp);font-weight:400;font-size:1.375rem;line-height:1;text-transform:uppercase;color:var(--paper)}
+.vlabel{margin:.4rem 0 0;font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(251,250,248,.55)}
+.vcard ul{list-style:none;margin:.8rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.vcard li{font-family:var(--util);font-size:.6875rem;font-weight:600;color:#fff;background:var(--c);padding:.34rem .65rem;border-radius:999px;transition:transform .2s cubic-bezier(.22,1,.36,1)}
+.vcard li span{font-weight:500;opacity:.85}
+.vcard:hover li{transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.cl,.vcard li{transition:none}.cl:hover,.cl:focus-visible,.vcard:hover li{transform:none}}
+
+/* skip link, anchors */
+.skip{position:absolute;left:-999px;top:0;z-index:40;background:var(--ink);color:var(--paper);font-family:var(--util);font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:.7rem 1rem;text-decoration:none}
+.skip:focus{left:0}
+section[id],#request{scroll-margin-top:4.75rem}
+
+/* the short version */
+.spine{border-bottom:2px solid var(--rule);background:var(--paper-2)}
+.spine .wrap{padding-block:clamp(2.5rem,5vw,3.5rem)}
+.spine .hd{max-width:40rem}
+.pillars{display:grid;grid-template-columns:1fr;gap:1.75rem;margin-top:2rem}
+@media (min-width:52rem){.pillars{grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}}
+.pillar{min-width:0;border-top:3px solid var(--red);padding-top:.9rem;display:flex;flex-direction:column;align-items:flex-start}
+.pillar h3{font-family:var(--disp);font-size:clamp(1.5rem,3vw,2rem);line-height:1;letter-spacing:-.01em;text-transform:uppercase}
+.pillar p{margin:.65rem 0 0;font-size:1rem;line-height:1.55;color:var(--grey)}
+.pillar .watch{margin-top:auto;padding-top:.9rem}
+.scale{margin:2rem 0 0;max-width:46rem;border-top:2px solid var(--rule);padding-top:.9rem;font-family:var(--util);font-size:.8125rem;font-weight:500;line-height:1.7;color:var(--grey)}
+.scale b{color:var(--ink);font-weight:600}
+
+/* built from zero */
+.built{border-bottom:2px solid var(--rule)}
+.built .wrap{padding-block:clamp(2.5rem,5vw,3.5rem)}
+.ledger{list-style:none;margin:1.75rem 0 0;padding:0;border-top:2px solid var(--rule)}
+.ledger li{display:grid;grid-template-columns:1fr;gap:.3rem 1.5rem;align-items:baseline;padding-block:.95rem;border-bottom:1px solid var(--rule);transition:padding-left .3s cubic-bezier(.22,1,.36,1)}
+@media (min-width:48rem){.ledger li{grid-template-columns:minmax(0,15rem) minmax(0,1fr) auto}.ledger li:hover{padding-left:.6rem}}
+.lg-name{font-family:var(--disp);font-size:1.375rem;line-height:1.05;letter-spacing:-.005em;text-transform:uppercase}
+.lg-what{font-size:1rem;line-height:1.5;color:var(--grey)}
+.lg-mark{justify-self:start;white-space:nowrap}
+@media (min-width:48rem){.lg-mark{justify-self:end}}
+.nextup{margin-top:2.75rem}
+.nextup .kicker{margin-bottom:0}
+
+/* closing: contact + CV request */
+.closing{background:var(--paper-2)}
+.closing-grid{display:grid;grid-template-columns:1fr;gap:3rem;padding-block:clamp(2.75rem,5.5vw,4.25rem)}
+@media (min-width:56rem){.closing-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4rem}}
+.closing-talk,.closing-cv{min-width:0}
+.closing .mail{font-size:clamp(1.5rem,6.4vw,2.75rem)}
+.hd-sm{font-size:clamp(1.6rem,3.6vw,2.4rem)}
+.closing .fields{margin-top:1.25rem}
+.reqok{margin-top:1.5rem;border-top:2px solid var(--red);padding-top:1rem}
+.rokline{margin:.6rem 0 0;font-size:1.0625rem}
+.rokline b{font-weight:500}
+#cvform button[disabled]{opacity:.6;cursor:default}
+.ft-nav{display:flex;flex-wrap:wrap;gap:.4rem 1.25rem}
+.ft-nav a{color:var(--grey);text-decoration:none}
+.ft-nav a:hover,.ft-nav a:focus-visible{color:var(--red)}
+@media (prefers-reduced-motion:reduce){.ledger li{transition:none}.ledger li:hover{padding-left:0}}
+
+.clients{border-bottom:2px solid var(--rule);background:var(--paper-2)}
+.clients .wrap{padding-block:clamp(2rem,4vw,2.75rem)}
+.clientgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1px;background:var(--rule);border:2px solid var(--rule);margin:1.75rem 0 0}
+.ct{background:var(--paper);padding:1rem 1.1rem;min-width:0}
+.ct h3{font-family:var(--disp);font-size:1.0625rem;text-transform:uppercase;letter-spacing:-.005em;line-height:1.1}
+.ct .role{margin:.4rem 0 0;font-family:var(--util);font-size:.5rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.ct p{margin:.4rem 0 0;font-family:var(--util);font-size:.75rem;font-weight:500;line-height:1.55;color:var(--grey)}
+.netline{font-family:var(--util);font-size:.8125rem;font-weight:500;line-height:1.7;color:var(--grey);margin:1.5rem 0 0;max-width:46rem;border-top:2px solid var(--rule);padding-top:.9rem}
+.netline b{color:var(--ink);font-weight:600}
+
+.feature{border-bottom:2px solid var(--rule)}
+.feature .wrap{padding-block:clamp(2.5rem,5vw,4rem)}
+.standfirst{font-size:clamp(1.0625rem,2.2vw,1.3125rem);line-height:1.55;max-width:42rem;margin:1.5rem 0 0}
+.standfirst::first-letter{font-family:var(--disp);font-size:3.9em;line-height:.76;float:left;margin:.06em .1em 0 0;color:var(--red)}
+.cols{margin-top:1.5rem;max-width:52rem;columns:2;column-gap:2.75rem}
+.cols p{margin:0 0 1rem;color:var(--grey)}
+.cols p:last-child{margin-bottom:0}
+@media (max-width:46rem){.cols{columns:1}}
+
+.index{border-bottom:2px solid var(--rule)}
+.index .wrap{padding-block:clamp(2.5rem,5vw,3.5rem)}
+.ix{border-top:2px solid var(--rule);margin-top:1.75rem}
+.ixrow{display:grid;grid-template-columns:2.5rem minmax(0,1fr);gap:0 1rem;padding-block:1.4rem;border-bottom:1px solid var(--rule)}
+.ixno{font-family:var(--util);font-size:.6875rem;font-weight:600;letter-spacing:.06em;color:var(--red);padding-top:.5rem;font-variant-numeric:tabular-nums}
+.ixbody{min-width:0}
+.ixhead{display:flex;flex-wrap:wrap;gap:.2rem .9rem;align-items:baseline;justify-content:space-between}
+.ixrow h3{font-family:var(--disp);font-size:clamp(1.375rem,3.4vw,2.125rem);line-height:1;letter-spacing:-.01em;text-transform:uppercase;color:inherit}
+.ixtoggle{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;width:100%;background:none;border:0;padding:.15rem 0;margin:0;cursor:pointer;text-align:left;color:var(--ink);transition:color .15s;font:inherit}
+.ixtoggle:hover{color:var(--red)}
+.ixrow.open .ixtoggle{color:var(--red)}
+.ixmark{position:relative;width:.95rem;height:.95rem;flex:none}
+.ixmark::before,.ixmark::after{content:"";position:absolute;left:50%;top:50%;background:currentColor;transform:translate(-50%,-50%)}
+.ixmark::before{width:100%;height:2px}
+.ixmark::after{width:2px;height:100%;transition:transform .3s ease}
+.ixrow.open .ixmark::after{transform:translate(-50%,-50%) scaleY(0)}
+.ixdetail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .42s cubic-bezier(.22,1,.36,1)}
+.work,.ct{transition:transform .25s cubic-bezier(.22,1,.36,1)}
+.work:hover,.ct:hover{transform:translateY(-3px)}
+.shot img{transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.work:hover .shot img{transform:scale(1.035)}
+.btn:active,.copy:active,.filters button:active{transform:scale(.96)}
+@media (prefers-reduced-motion:reduce){.work,.ct,.shot img{transition:none}.work:hover,.ct:hover{transform:none}.work:hover .shot img{transform:none}}
+.ixrow.open .ixdetail{grid-template-rows:1fr}
+.ixdetail>div{overflow:hidden;min-height:0}
+@media (prefers-reduced-motion:reduce){.ixdetail,.ixmark::after{transition:none}}
+.ixwhen{font-family:var(--util);font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);white-space:nowrap;font-variant-numeric:tabular-nums}
+.ixrole{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:.5rem 0 0}
+.ixrow ul{margin:.7rem 0 0;padding-left:1.1rem;max-width:46rem}
+.ixrow li{margin-bottom:.35rem;color:var(--grey);font-size:1rem;line-height:1.5}
+.ixrow li::marker{color:var(--red)}
+.ixrow li:last-child{margin-bottom:0}
+.ixrow li b{color:var(--ink);font-weight:500}
+.capblock{margin-top:2rem;border-top:2px solid var(--rule);padding-top:1.1rem;display:grid;grid-template-columns:1fr;gap:1rem}
+@media (min-width:46rem){.capblock{grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1.75rem}}
+.capblock h4{margin:0;font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.capblock p{margin:.5rem 0 0;font-family:var(--util);font-size:.8125rem;font-weight:500;line-height:1.85;color:var(--ink)}
+
+.band-red{background:var(--red);color:#fff;border-bottom:2px solid var(--rule)}
+.band-red .wrap{padding-block:clamp(2.75rem,5.5vw,4rem)}
+.band-red .kicker{color:#fff}
+.band-red .hd{color:#fff;max-width:34rem}
+.band-red .lede{font-size:clamp(1.0625rem,2.2vw,1.25rem);line-height:1.5;max-width:36rem;margin:1.25rem 0 0;color:#fff}
+.band-red .recent{margin-top:1.75rem;border-top:2px solid #fff;padding-top:1rem;font-family:var(--util);font-size:.8125rem;font-weight:500;line-height:1.8;color:#fff;max-width:46rem}
+.band-red .recent b{font-weight:600}
+.btn-white{margin-top:1.75rem;background:#fff;border-color:#fff;color:var(--red)}
+.btn-white:hover,.btn-white:focus-visible{background:var(--ink);border-color:var(--ink);color:#fff}
+
+.next-sec{border-bottom:2px solid var(--rule)}
+.next-sec .wrap{padding-block:clamp(2.5rem,5vw,3.5rem)}
+.soon{font-family:var(--disp);font-size:clamp(2.75rem,10vw,6.5rem);line-height:.88;letter-spacing:-.03em;text-transform:uppercase;margin:.4rem 0 0}
+
+.contact .wrap{padding-block:clamp(2.75rem,5.5vw,4.25rem)}
+.mail{font-family:var(--disp);font-size:clamp(1.5rem,7.6vw,4.25rem);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;color:var(--red);word-break:break-word;margin:1.5rem 0 0}
+.copy{font-family:var(--util);font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:none;border:2px solid var(--ink);border-radius:999px;color:var(--ink);padding:.7rem 1.25rem;cursor:pointer;text-decoration:none;display:inline-block;transition:background .15s,color .15s}
+.copy:hover,.copy:focus-visible{background:var(--ink);color:var(--paper)}
+#copy{margin-top:1.5rem}
+.elsewhere{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:2rem;border-top:2px solid var(--rule);padding-top:1rem}
+.elsewhere a{font-family:var(--util);font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:2px solid var(--red);padding-bottom:2px}
+.elsewhere a:hover,.elsewhere a:focus-visible{color:var(--red)}
+
+.request{border-bottom:2px solid var(--rule);background:var(--paper-2)}
+.request .wrap{padding-block:clamp(2.5rem,5vw,3.5rem)}
+.reqlede{max-width:34rem;margin:1.25rem 0 0;color:var(--grey)}
+.fields{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.5rem;max-width:42rem}
+@media (min-width:40rem){.fields{grid-template-columns:1fr 1fr}}
+.fields label{display:block;min-width:0}
+.fields span{display:block;font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-bottom:.35rem}
+.fields input{width:100%;font-family:var(--util);font-size:.9375rem;padding:.75rem 1rem;border:2px solid var(--rule);border-radius:999px;background:var(--paper);color:var(--ink)}
+.reqout{margin-top:1.75rem;border-top:2px solid var(--red);padding-top:1rem;max-width:42rem}
+.rtitle{margin:0;font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.reqout pre{margin:.75rem 0 0;font-family:var(--util);font-size:.8125rem;line-height:1.7;white-space:pre-wrap;word-break:break-word;background:var(--paper);border:2px solid var(--rule);padding:.9rem}
+.racts{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem}
+.rnote{margin:.9rem 0 0;font-family:var(--util);font-size:.75rem;color:var(--grey)}
+.rnote b{color:var(--ink)}
+
+footer{border-top:2px solid var(--rule)}
+footer .wrap{padding-block:1.5rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;font-family:var(--util);font-size:.625rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){.tk-track,.tk2-track,.film-track,.film::before,.film::after{animation:none}html{scroll-behavior:auto}}
+@media (max-width:30rem){.ixrow{grid-template-columns:1fr;gap:.2rem}.ixno{padding-top:0}}
+</style>
+
+<a class="skip" href="#work">Skip to the work</a>
+<div class="masthead">
+  <div class="wrap">
+    <a class="mh-name" href="#top">Ritz Mpindi</a>
+    <nav class="mh-nav">
+      <a href="#work">Work</a><a href="#convening">Convening</a><a href="#clients">Clients</a><a href="#index">Index</a><a href="advisory.html#top">Advisory</a><a href="#contact">Contact</a><button class="mh-ritz" id="ritz-toggle" type="button" aria-expanded="false" aria-controls="ritz-panel">Ritz</button>
+    </nav>
+  </div>
+  <div class="ritz-panel" id="ritz-panel" role="region" aria-label="Ritz" aria-hidden="true">
+    <div class="wrap">
+      <div class="rp-head"><p class="kicker">Ritz</p><button class="rp-close" type="button">Close &times;</button></div>
+    <div class="about-grid">
+    <figure class="about-film" data-yt="5R5EOcqdc8w">
+      <button class="shot-play" type="button" aria-label="Play the Moonshot Young Leader 2024 feature on Ritz Mpindi">
+        <img loading="lazy" decoding="async" src="screen/about.jpg" alt="Ritz Mpindi tipping his hat in a doorway" width="1170" height="658">
+        <span class="screen-play" aria-hidden="true"></span>
+      </button>
+      <figcaption>
+        <span class="about-cap">Feature &middot; Moonshot Young Leader 2024</span>
+        <a class="watch" href="https://www.youtube.com/watch?v=5R5EOcqdc8w" target="_blank" rel="noopener">Watch on YouTube &nearr;</a>
+      </figcaption>
+    </figure>
+    <div class="about-copy">
+      <p class="pullquote">I move capital <em>through relationships.</em> Help organizations storytell to drive business impact. Curate the rooms and conversations that <em>unlock</em> enterprise transformation.</p>
+    </div>
+    </div>
+      <div class="about-more">
+        <p class="kicker">Features &amp; films</p>
+        <div class="feats">
+        <figure class="feat" data-yt="NzxTvi4TEyI">
+          <button class="shot-play" type="button" aria-label="Play What&rsquo;s on Your Mind? featuring Ritz Mpindi">
+            <img loading="lazy" decoding="async" src="screen/sandbar-feature.jpg" alt="Ritz Mpindi asking his Sandbar ring to set up an introduction, walking down a Brooklyn street" width="1200" height="675">
+            <span class="screen-play" aria-hidden="true"></span>
+          </button>
+          <figcaption>
+            <span class="feat-title">What&rsquo;s on Your Mind? Feat. Ritz Mpindi</span>
+            <span class="feat-sub">Sandbar &middot; Creator feature</span>
+            <a class="watch" href="https://www.youtube.com/watch?v=NzxTvi4TEyI" target="_blank" rel="noopener">Watch on YouTube &nearr;</a>
+          </figcaption>
+        </figure>
+        <figure class="feat" data-yt="TtyK5LWnee0">
+          <button class="shot-play" type="button" aria-label="Play Answering your questions: Ritz Mpindi interviews Carla Pi&ntilde;eyro Sublett">
+            <img loading="lazy" decoding="async" src="screen/carla.jpg" alt="Ritz Mpindi and Carla Pi&ntilde;eyro Sublett in a split-screen interview" width="1200" height="675">
+            <span class="screen-play" aria-hidden="true"></span>
+          </button>
+          <figcaption>
+            <span class="feat-title">Answering Your Questions</span>
+            <span class="feat-sub">Ritz Mpindi interviews Carla Pi&ntilde;eyro Sublett</span>
+            <a class="watch" href="https://www.youtube.com/watch?v=TtyK5LWnee0" target="_blank" rel="noopener">Watch on YouTube &nearr;</a>
+          </figcaption>
+        </figure>
+        <figure class="feat" data-yt="_fpuBlOappE" data-start="2210">
+          <button class="shot-play" type="button" aria-label="Play Spark Tank Live, storIAccelerator 2025 Pitch Day, from Ritz Mpindi&rsquo;s pitch">
+            <img loading="lazy" decoding="async" src="screen/sparktank.jpg" alt="Ritz Mpindi pitching on a video call at Spark Tank Live" width="1200" height="675">
+            <span class="screen-play" aria-hidden="true"></span>
+          </button>
+          <figcaption>
+            <span class="feat-title">Spark Tank Live</span>
+            <span class="feat-sub">storIAccelerator 2025 &middot; Pitch Day</span>
+            <a class="watch" href="https://www.youtube.com/watch?v=_fpuBlOappE&amp;t=2210s" target="_blank" rel="noopener">Watch on YouTube &nearr;</a>
+          </figcaption>
+        </figure>
+        <figure class="feat" data-yt="1IirS0hKD5g">
+          <button class="shot-play" type="button" aria-label="Play A B&#362;rning Heart teaser concept">
+            <img loading="lazy" decoding="async" src="screen/burning-heart.jpg" alt="Archival family photo with the A B&#363;rning Heart title, from the teaser" width="1200" height="675">
+            <span class="screen-play" aria-hidden="true"></span>
+          </button>
+          <figcaption>
+            <span class="feat-title">A B&#363;rning Heart</span>
+            <span class="feat-sub">Docuseries &middot; Teaser concept, 2025</span>
+            <a class="watch" href="https://www.youtube.com/watch?v=1IirS0hKD5g" target="_blank" rel="noopener">Watch on YouTube &nearr;</a>
+          </figcaption>
+        </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ticker" aria-hidden="true">
+  <div class="tk-track">
+    <div>
+      <span>11-figure client acquisition</span><span>&bull;</span><span>100M+ campaign views</span><span>&bull;</span><span>&pound;1M+ agency ARR built from zero</span><span>&bull;</span><span>250+ events produced</span><span>&bull;</span><span>Partiful VIP &mdash; top 0.1% host</span><span>&bull;</span>
+    </div>
+    <div>
+      <span>11-figure client acquisition</span><span>&bull;</span><span>100M+ campaign views</span><span>&bull;</span><span>&pound;1M+ agency ARR built from zero</span><span>&bull;</span><span>250+ events produced</span><span>&bull;</span><span>Partiful VIP &mdash; top 0.1% host</span><span>&bull;</span>
+    </div>
+  </div>
+</div>
+
+<div class="ticker2">
+  <div class="tk2-track">
+    <div>
+      <span class="tk2-label">Work featured in</span><span class="tk2-sans">Bloomberg</span><span class="tk2-serif">Financial Times</span><span class="tk2-caps">Forbes</span><span class="tk2-serif">The New York Times</span><span class="tk2-serif">Barron&rsquo;s</span><span class="tk2-sans">Fast Company</span><span class="tk2-caps">Adweek</span><span class="tk2-sans">Business Insider</span><span class="tk2-caps">Nasdaq</span><span class="tk2-serif">Vogue Business</span><span class="tk2-caps">WWD</span><span class="tk2-div">|</span><span class="tk2-label">As seen on</span><span class="tk2-caps">CNBC</span><span class="tk2-caps">NBC</span><span class="tk2-caps">CNN</span><span class="tk2-sans">Cheddar TV</span><span class="tk2-div">|</span>
+    </div>
+    <div aria-hidden="true">
+      <span class="tk2-label">Work featured in</span><span class="tk2-sans">Bloomberg</span><span class="tk2-serif">Financial Times</span><span class="tk2-caps">Forbes</span><span class="tk2-serif">The New York Times</span><span class="tk2-serif">Barron&rsquo;s</span><span class="tk2-sans">Fast Company</span><span class="tk2-caps">Adweek</span><span class="tk2-sans">Business Insider</span><span class="tk2-caps">Nasdaq</span><span class="tk2-serif">Vogue Business</span><span class="tk2-caps">WWD</span><span class="tk2-div">|</span><span class="tk2-label">As seen on</span><span class="tk2-caps">CNBC</span><span class="tk2-caps">NBC</span><span class="tk2-caps">CNN</span><span class="tk2-sans">Cheddar TV</span><span class="tk2-div">|</span>
+    </div>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="rail">
+      <p><b>No. 01</b></p>
+      <p>New York, NY</p>
+      <p>Go-to-market</p>
+      <p>Platform</p>
+      <p>Storytelling</p>
+    </div>
+    <div class="typeblock">
+      <h1 class="lockup"><span>Ritz</span><span>Mpindi<em>.</em></span></h1>
+      <p class="deck">Moving capital, relevance and influence <i>through relationships.</i></p>
+      <div class="acts">
+        <a class="btn btn-fill" href="#work">See the work</a>
+        <a class="btn btn-line" href="#request">Request CV</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="film" aria-label="Portraits of Ritz Mpindi">
+  <div class="film-track">
+    <div class="film-set">
+      <figure class="frame"><img src="film/01.jpg" alt="Ritz Mpindi" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/05.jpg" alt="" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/06.jpg" alt="" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/02.jpg" alt="" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/04.jpg" alt="" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/07.jpg" alt="" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/03.jpg" alt="" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/08.jpg" alt="" width="700" height="700"></figure>
+    </div>
+    <div class="film-set" aria-hidden="true">
+      <figure class="frame"><img src="film/01.jpg" alt="" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/05.jpg" alt="" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/06.jpg" alt="" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/02.jpg" alt="" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/04.jpg" alt="" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/07.jpg" alt="" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/03.jpg" alt="" width="700" height="700"></figure>
+      <figure class="frame"><img src="film/08.jpg" alt="" width="700" height="700"></figure>
+    </div>
+  </div>
+</div>
+
+<section class="figs">
+  <div class="wrap">
+    <dl class="figgrid">
+      <div class="fig"><dt>Top 0.1%</dt><dd>Partiful VIP host &mdash; I build the rooms, and the conversations inside them</dd></div>
+      <div class="fig"><dt>100M+</dt><dd>unique monthly views across the campaigns shown here</dd></div>
+      <div class="fig"><dt>~$1M</dt><dd>raised at a single gala &mdash; 63% over goal, delivered under budget</dd></div>
+      <div class="fig"><dt>250+</dt><dd>dealmaking and social events produced</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="spine" id="short">
+  <div class="wrap">
+    <p class="kicker">The short version</p>
+    <h2 class="hd">For founders and the funds behind them</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Move capital</h3>
+        <p>Full-cycle sales into private equity, private credit, hedge funds and enterprise. Originated and closed the largest client in my firm&rsquo;s history, and grew the book by 285%.</p>
+        <a class="watch" href="#clients">See the clients &darr;</a>
+      </div>
+      <div class="pillar">
+        <h3>Tell the story</h3>
+        <p>Campaigns, earned media and film for Nike, Netflix, Bumble and Birkenstock, and for venture-backed founders ahead of the raise.</p>
+        <a class="watch" href="#work">See the work &darr;</a>
+      </div>
+      <div class="pillar">
+        <h3>Curate the room</h3>
+        <p>Dealmaking nights at SXSW, NFT NYC and Art Basel, an invite-only dinner series, and a community that keeps outgrowing its venues.</p>
+        <a class="watch" href="#convening">See the rooms &darr;</a>
+      </div>
+    </div>
+    <p class="scale"><b>Built to scale.</b> Claude skills and agents for prospecting, research and outreach &mdash; how a small sales team came to support 285% more clients.</p>
+  </div>
+</section>
+
+<section class="work-sec" id="work">
+  <div class="wrap">
+    <p class="kicker">Selected work</p>
+    <h2 class="hd">I&rsquo;d rather show than tell</h2>
+    <p class="workintro">Brand campaigns, live events and founder storytelling &mdash; for Bumble, Birkenstock, The Sandbox, HERA and Vennio. The brief, the execution, and the results.</p>
+
+    <article class="work lead-work">
+      <div class="shot"><img loading="lazy" decoding="async" src="work/sandbox.jpg" alt="The Paris Hilton voxel avatar built for The Sandbox" width="1200" height="750"></div>
+      <div>
+        <div class="wmeta"><span class="wno">Featured</span><span class="tag">Live events</span></div>
+        <h3>The Sandbox</h3>
+        <p class="sum">The brief: FOMO-worthy live events that bring entertainment leaders into the metaverse during a bear market. I used Paris Hilton&rsquo;s SXSW metaverse DJ set as proof of concept to upsell the client on $1M in strategic spend at NFT NYC 2022, then coordinated the team that built the three-day showcase around it.</p>
+        <p class="partners">Sony &middot; Gucci &middot; Warner Music &middot; TIME &middot; Lionsgate &nbsp;&bull;&nbsp; Snoop Dogg &middot; Ti&euml;sto &middot; Steve Aoki &middot; Cordae</p>
+        <dl class="stats">
+          <div><dt>Unique monthly views</dt><dd>4.9M+</dd></div>
+          <div><dt>Platform engagements</dt><dd>200K+</dd></div>
+          <div><dt>Press features</dt><dd>20+</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <div class="filters" id="filters" role="group" aria-label="Filter work by discipline">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="events" aria-pressed="false">Live events</button>
+      <button type="button" data-filter="campaigns" aria-pressed="false">Campaigns</button>
+      <button type="button" data-filter="story" aria-pressed="false">Storytelling</button>
+      <p class="wcount" id="wcount">6 shown</p>
+    </div>
+
+    <div class="works">
+
+      <article class="work" data-kind="campaigns">
+        <div class="shot"><img loading="lazy" decoding="async" src="work/bumble.jpg" alt="Still from the Bumble UK Black History Month campaign" width="1200" height="900"></div>
+        <div class="wmeta"><span class="wno">01</span><span class="tag">Campaigns</span></div>
+        <h3>Bumble UK</h3>
+        <p>A social-first Black History Month campaign for the UK and Ireland, built on real women and real dating experiences. We brought the faces of <i>Love Island</i> in to reframe &ldquo;don&rsquo;t judge a book by its cover,&rdquo; uniting influencer, social and creative behind one narrative.</p>
+        <dl class="stats">
+          <div><dt>Unique monthly views</dt><dd>63.8M+</dd></div>
+          <div><dt>Earned media value</dt><dd>$518K+</dd></div>
+          <div><dt>Coverage</dt><dd>10+</dd></div>
+        </dl>
+      </article>
+
+      <article class="work" data-kind="events">
+        <div class="shot"><img loading="lazy" decoding="async" src="work/birkenstock.jpg" alt="Guests filling the hall at the Birkenstock anniversary showcase, Casa Cipriani" width="1200" height="900"></div>
+        <div class="wmeta"><span class="wno">02</span><span class="tag">Live events</span></div>
+        <h3>Birkenstock</h3>
+        <p>Turned the brand&rsquo;s 248th anniversary into a pre-IPO VIP showcase. Casa Cipriani on Wall Street became a living exhibition &mdash; Sotheby&rsquo;s-level rarities at auction, rising musical acts, and interactive installations that made the brand&rsquo;s reach legible to the room.</p>
+        <dl class="stats">
+          <div><dt>Unique monthly views</dt><dd>37.8M+</dd></div>
+          <div><dt>Earned media value</dt><dd>$724K+</dd></div>
+          <div><dt>Coverage</dt><dd>10+</dd></div>
+        </dl>
+      </article>
+
+      <article class="work" data-kind="story">
+        <div class="shot"><img loading="lazy" decoding="async" src="work/rkl.jpg" alt="Paul George with Rumble Kong League characters in the Kong Star Club arena" width="1200" height="900"></div>
+        <div class="wmeta"><span class="wno">03</span><span class="tag">Storytelling</span></div>
+        <h3>Paul George &times; RKL</h3>
+        <p>A web3 gaming platform needed a cost-effective way to activate its biggest brand partner pre-launch. I used my media rolodex to place NBA All-Star Paul George in a Q&amp;A with Kevin Durant&rsquo;s Boardroom, positioning client and talent as thought leaders. It drew inbound &mdash; and a partnership with Stance Socks.</p>
+        <dl class="stats">
+          <div><dt>Unique monthly views</dt><dd>4.9M+</dd></div>
+          <div><dt>Earned media value</dt><dd>$737K+</dd></div>
+          <div><dt>Press features</dt><dd>12+</dd></div>
+        </dl>
+      </article>
+
+      <article class="work" data-kind="campaigns">
+        <div class="shot"><img loading="lazy" decoding="async" src="work/hera.jpg" alt="HERA presents The Girl Behind the Goals with Rachel Daly" width="1200" height="900"></div>
+        <div class="wmeta"><span class="wno">04</span><span class="tag">Campaigns</span></div>
+        <h3>HERA Clothing</h3>
+        <p>New ownership needed the brand rebuilt across social, influencer and partnerships ahead of the 2023 FIFA Women&rsquo;s World Cup. We launched the Waymaker campaign and &ldquo;Scouted By HERA,&rdquo; signed England Lioness Rachel Daly as first major brand partner, and closed on a limited shirt designed with her.</p>
+        <dl class="stats">
+          <div><dt>Clothing drop</dt><dd>Sold out</dd></div>
+          <div><dt>Impressions</dt><dd>40K+</dd></div>
+          <div><dt>Pieces of content</dt><dd>25+</dd></div>
+        </dl>
+      </article>
+
+      <article class="work" data-kind="story">
+        <div class="shot"><img loading="lazy" decoding="async" src="work/vennio.jpg" alt="Vennio billboard for Ansu Fati on a London street" width="1200" height="900"></div>
+        <div class="wmeta"><span class="wno">05</span><span class="tag">Storytelling</span></div>
+        <h3>Ansu Fati &times; Vennio</h3>
+        <p>Ioconic Venture Studio was launching Vennio, a platform where athletes connect with their communities. We built the web and social presence on Instagram and Discord around FC Barcelona&rsquo;s Ansu Fati, with a community voice that produced one-to-one fan-to-athlete moments.</p>
+        <dl class="stats">
+          <div><dt>Impressions</dt><dd>8M+</dd></div>
+          <div><dt>Engagements</dt><dd>1M+</dd></div>
+          <div><dt>Followers at launch</dt><dd>4.5K</dd></div>
+        </dl>
+      </article>
+
+      <article class="work" data-kind="events">
+        <div class="shot"><img loading="lazy" decoding="async" src="work/saturday.jpg" alt="DJ decks and the Sat&#363;rday Service artist placard at The Gather Gala" width="1200" height="900"></div>
+        <div class="wmeta"><span class="wno">06</span><span class="tag">Live events</span></div>
+        <h3>Sat&#363;rday Service</h3>
+        <p>Social impact nights grown from a 2024 prototype into oversubscribed rooms, with the turnout funding meals for the homeless. It also programs other people&rsquo;s stages: here, curating the artists for The Gather Gala.</p>
+        <dl class="stats">
+          <div><dt>Guests at launch</dt><dd>257</dd></div>
+          <div><dt>Meals funded</dt><dd>1,000+</dd></div>
+          <div><dt>Status</dt><dd>Sold out</dd></div>
+        </dl>
+      </article>
+
+
+    </div>
+  </div>
+</section>
+
+<section class="screening" id="screening">
+  <div class="wrap">
+    <p class="kicker">Screening room</p>
+    <h2 class="hd">Roll the tape</h2>
+    <p class="screenintro">Some work only makes sense in motion. Press play and the film loads right here.</p>
+    <div class="screens">
+
+      <figure class="screen" data-yt="DP89VnaOA68">
+        <button class="shot-play" type="button" aria-label="Play #MyLoveIsBlackLove">
+          <img loading="lazy" decoding="async" src="screen/bumble.jpg" alt="Still from the Bumble UK campaign film" width="1200" height="675">
+          <span class="screen-play" aria-hidden="true"></span>
+        </button>
+        <figcaption>
+          <span class="screen-title">#MyLoveIsBlackLove</span>
+          <span class="screen-sub">Bumble UK &middot; You don&rsquo;t know me&hellip; yet.</span>
+          <a class="watch" href="https://www.youtube.com/watch?v=DP89VnaOA68" target="_blank" rel="noopener">Watch on YouTube &nearr;</a>
+        </figcaption>
+      </figure>
+
+      <figure class="screen" data-yt="hml3NnUm_24">
+        <button class="shot-play" type="button" aria-label="Play An evening with Birkenstock">
+          <img loading="lazy" decoding="async" src="screen/birkenstock.jpg" alt="The hall at the Birkenstock anniversary showcase" width="1200" height="675">
+          <span class="screen-play" aria-hidden="true"></span>
+        </button>
+        <figcaption>
+          <span class="screen-title">An evening with Birkenstock</span>
+          <span class="screen-sub">Birkenstock &middot; Event film</span>
+          <a class="watch" href="https://www.youtube.com/watch?v=hml3NnUm_24" target="_blank" rel="noopener">Watch on YouTube &nearr;</a>
+        </figcaption>
+      </figure>
+
+      <figure class="screen" data-yt="NHf4U35IXz4">
+        <button class="shot-play" type="button" aria-label="Play The Type 401">
+          <img loading="lazy" decoding="async" src="screen/donraven.jpg" alt="A clapperboard slate marked Don Raven on set" width="1200" height="675">
+          <span class="screen-play" aria-hidden="true"></span>
+        </button>
+        <figcaption>
+          <span class="screen-title">The Type 401</span>
+          <span class="screen-sub">DonRaven &middot; Film</span>
+          <a class="watch" href="https://www.youtube.com/watch?v=NHf4U35IXz4" target="_blank" rel="noopener">Watch on YouTube &nearr;</a>
+        </figcaption>
+      </figure>
+
+
+      <figure class="screen">
+        <a class="shot-play" href="https://www.cheddar.com/media/danvas-announces-7-million-seed-round-to-launch-luxury-digital-art-canvas/" target="_blank" rel="noopener" aria-label="Watch the Danvas segment on Cheddar">
+          <img loading="lazy" decoding="async" src="screen/danvas.jpg" alt="A Danvas digital art canvas installed in a living room" width="1200" height="675">
+          <span class="cover-news on-img" aria-hidden="true">
+            <span class="cn-net">Cheddar</span>
+            <span class="cn-chyron"><b>Danvas</b><span>$7M seed round</span></span>
+          </span>
+          <span class="screen-play" aria-hidden="true"></span>
+        </a>
+        <figcaption>
+          <span class="screen-title">Danvas announces $7M seed round</span>
+          <span class="screen-sub">Danvas &middot; Placed on Cheddar</span>
+          <a class="watch" href="https://www.cheddar.com/media/danvas-announces-7-million-seed-round-to-launch-luxury-digital-art-canvas/" target="_blank" rel="noopener">Watch on Cheddar &nearr;</a>
+        </figcaption>
+      </figure>
+
+      <figure class="screen" data-yt="v5s0tjhu2jc">
+        <button class="shot-play" type="button" aria-label="Play Crois pas qu&rsquo;on dort">
+          <img loading="lazy" decoding="async" src="screen/nike.jpg" alt="An athlete mid-workout, from the Nike film Crois pas qu&rsquo;on dort" width="960" height="540">
+          <span class="screen-play" aria-hidden="true"></span>
+        </button>
+        <figcaption>
+          <span class="screen-title">Crois pas qu&rsquo;on dort</span>
+          <span class="screen-sub">Nike &middot; 23.2M views &middot; 1.9M reach</span>
+          <a class="watch" href="https://www.youtube.com/watch?v=v5s0tjhu2jc" target="_blank" rel="noopener">Watch on YouTube &nearr;</a>
+        </figcaption>
+      </figure>
+
+      <figure class="screen" data-yt="ZTc0k7xJ7mk" data-start="56">
+        <button class="shot-play" type="button" aria-label="Play A look back at The Sandbox event in NYC">
+          <img loading="lazy" decoding="async" src="screen/sandbox.jpg" alt="The Sandbox panel stage under the rotunda at NFT.NYC" width="1200" height="675">
+          <span class="screen-play" aria-hidden="true"></span>
+        </button>
+        <figcaption>
+          <span class="screen-title">A look back at The Sandbox event in NYC</span>
+          <span class="screen-sub">The Sandbox &middot; Event recap</span>
+          <a class="watch" href="https://www.youtube.com/watch?v=ZTc0k7xJ7mk&amp;t=56s" target="_blank" rel="noopener">Watch on YouTube &nearr;</a>
+        </figcaption>
+      </figure>
+
+      <figure class="screen" data-yt="BYLYZ7OsymE">
+        <button class="shot-play" type="button" aria-label="Play the Netflix trailer">
+          <img loading="lazy" decoding="async" src="screen/netflix.jpg" alt="Two characters face off, from the Netflix trailer" width="800" height="450">
+          <span class="screen-play" aria-hidden="true"></span>
+        </button>
+        <figcaption>
+          <span class="screen-title">Netflix</span>
+          <span class="screen-sub">Netflix &middot; Trailer</span>
+          <a class="watch" href="https://www.youtube.com/watch?v=BYLYZ7OsymE" target="_blank" rel="noopener">Watch on YouTube &nearr;</a>
+        </figcaption>
+      </figure>
+
+      <figure class="screen" data-yt="kCty7oiruBE">
+        <button class="shot-play" type="button" aria-label="Play HERA x Rachel Daly: Meet the Waymakers">
+          <img loading="lazy" decoding="async" src="screen/hera.jpg" alt="Rachel Daly in HERA presents The Girl Behind the Goals" width="1200" height="675">
+          <span class="screen-play" aria-hidden="true"></span>
+        </button>
+        <figcaption>
+          <span class="screen-title">Meet the Waymakers</span>
+          <span class="screen-sub">HERA &times; Rachel Daly &middot; Campaign film</span>
+          <a class="watch" href="https://www.youtube.com/watch?v=kCty7oiruBE" target="_blank" rel="noopener">Watch on YouTube &nearr;</a>
+        </figcaption>
+      </figure>
+
+
+
+
+    </div>
+  </div>
+</section>
+
+<section class="conv-sec" id="convening">
+  <div class="wrap">
+    <p class="kicker">Convening</p>
+    <h2 class="hd">Live events + media</h2>
+    <p class="convintro">Two services. Live events build the room; media carries the story. Each works alone &mdash; together they compound, because a story lands hardest on people who have already broken bread.</p>
+
+    <div class="filters" id="convfilters" role="group" aria-label="Filter convening by type">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="hospitality" aria-pressed="false">Live events</button>
+      <button type="button" data-filter="media" aria-pressed="false">Media</button>
+      <p class="wcount" id="convcount">6 shown</p>
+    </div>
+
+    <div class="convworks">
+
+      <article class="work" data-kind="hospitality">
+        <div class="shot"><img loading="lazy" decoding="async" src="work/vlg.jpg" alt="Guests standing in conversation at a VLG gathering" width="1200" height="900"></div>
+        <div class="wmeta"><span class="wno">01</span><span class="tag">Community</span><span class="since">Since Q3 2024</span></div>
+        <h3>VLG</h3>
+        <p>Making the city a village. A community impact collective for city-based Christians and skeptics, 18 to 40, built on the premise that belonging shouldn&rsquo;t depend on hopefully meeting someone. Programming runs across Happy Hour, Sat&#363;rday Service, Sunday Hang, 8 to 10 Dinners and City Relief service operations.</p>
+        <dl class="stats">
+          <div><dt>Gatherings hosted</dt><dd>100+</dd></div>
+          <div><dt>Peak room</dt><dd>200+</dd></div>
+          <div><dt>Status</dt><dd>Oversubscribed</dd></div>
+        </dl>
+      </article>
+
+      <article class="work" data-kind="hospitality">
+        <div class="shot"><img loading="lazy" decoding="async" src="work/saturday-conv.jpg" alt="Trading contacts on a phone in a crowded room" width="1200" height="900"></div>
+        <div class="wmeta"><span class="wno">02</span><span class="tag">Service</span><span class="since">Since Q1 2024</span></div>
+        <h3>Sat&#363;rday Service</h3>
+        <p>Social responsibility run as a service: live music, happy hours and monthly service outings for early-career New Yorkers. The room that shows up is the room that funds the meals.</p>
+        <dl class="stats">
+          <div><dt>Guests at launch</dt><dd>257</dd></div>
+          <div><dt>Meals funded</dt><dd>1,000+</dd></div>
+          <div><dt>Status</dt><dd>Sold out</dd></div>
+        </dl>
+      </article>
+
+      <article class="work" data-kind="hospitality">
+        <div class="shot"><img loading="lazy" decoding="async" src="work/dinners.jpg" alt="Guests laughing at an 8 to 10 Dinner" width="1200" height="759"></div>
+        <div class="wmeta"><span class="wno">03</span><span class="tag">Dinners</span><span class="since">Since Q1 2026</span></div>
+        <h3>8 to 10 Dinners</h3>
+        <p>An invite-only, semi-stealth dinner series. One table, a deliberately mixed guest list, and a good share of the introductions that later turn into business.</p>
+        <dl class="stats">
+          <div><dt>Status</dt><dd>Sold out</dd></div>
+          <div><dt>Access</dt><dd>Invite-only</dd></div>
+          <div><dt>Format</dt><dd>Co-hosted</dd></div>
+        </dl>
+      </article>
+
+      <article class="work" data-kind="media">
+        <div class="shot cover-rr"><span class="rr-mark">R&amp;R</span></div>
+        <div class="wmeta"><span class="wno">04</span><span class="tag">Podcast</span><span class="badge">Q1 2027</span></div>
+        <h3>Ritz &amp; Repeat</h3>
+        <p>Conversations with entrepreneurs and industry leaders about the relationships that actually built their careers, because no one great is ever self-made. Wisdom moved from one generation to the next, on the record.</p>
+        <dl class="stats">
+          <div><dt>Launch</dt><dd>Q1 2027</dd></div>
+          <div><dt>Format</dt><dd>Podcast</dd></div>
+          <div><dt>Status</dt><dd>In production</dd></div>
+        </dl>
+      </article>
+
+      <article class="work" data-kind="media">
+        <div class="shot"><img loading="lazy" decoding="async" src="work/sandbar.jpg" alt="Sandbar prototypes beside the finished rings" width="1200" height="900"></div>
+        <div class="wmeta"><span class="wno">05</span><span class="tag">Creator &middot; Advisory</span></div>
+        <h3>Sandbar</h3>
+        <p>The AI ring maker needed its product understood before a Series A announcement. I worked both sides: creator partner translating the product into video, and marketing strategist unlocking the creative production bottleneck so the team could ship at the pace the raise demanded.</p>
+        <dl class="stats">
+          <div><dt>Round announced</dt><dd>$23M Series A</dd></div>
+          <div><dt>Backers</dt><dd>Adjacent, Kindred</dd></div>
+          <div><dt>Role</dt><dd>Creator + advisor</dd></div>
+        </dl>
+      </article>
+
+      <article class="work" data-kind="media">
+        <div class="shot"><img loading="lazy" decoding="async" src="work/convergence.jpg" alt="C&Oslash;NVERGENCE mark" width="1200" height="900"></div>
+        <div class="wmeta"><span class="wno">06</span><span class="tag">Production</span></div>
+        <h3>C&Oslash;NVERGENCE</h3>
+        <p>The studio side of the advisory: media production, social and content built for founders and the funds around them. Shows, campaigns and channels taken from idea through production and distribution, so the story reaches the people who can act on it.</p>
+        <dl class="stats">
+          <div><dt>Shows in production</dt><dd>2</dd></div>
+          <div><dt>Formats</dt><dd>Podcast, social, film</dd></div>
+          <div><dt>Stage</dt><dd>Pre-seed to Series A</dd></div>
+        </dl>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="clients" id="clients">
+  <div class="wrap">
+    <h2 class="hd">Clients &amp; partners</h2>
+    <div class="filters clfilters" id="clfilters" role="group" aria-label="Filter clients by chapter">
+      <button type="button" data-filter="all" aria-pressed="true" style="--c:var(--ink)" data-cap="Five chapters, 57 clients and partners. Hover or tap any name to see the work.">All</button>
+      <button type="button" data-filter="bridger" aria-pressed="false" style="--c:var(--c-bridger)" data-cap="Bridger Consulting Group &middot; Expert-network and primary-research access, sold full-cycle to AI labs, asset managers, buy-side firms, consultancies and corporations."><span class="dot" aria-hidden="true"></span>Bridger</button>
+      <button type="button" data-filter="conv" aria-pressed="false" style="--c:var(--c-conv)" data-cap="C&Oslash;NVERGENCE &middot; Strategic advisory for founders and agencies, plus fractional social and content for key accounts."><span class="dot" aria-hidden="true"></span>C&Oslash;NVERGENCE</button>
+      <button type="button" data-filter="bfx" aria-pressed="false" style="--c:var(--c-bfx)" data-cap="Butterfly Effect &middot; Founding team. Campaigns, creators and social for global brands, run from London and New York."><span class="dot" aria-hidden="true"></span>Butterfly Effect</button>
+      <button type="button" data-filter="5c" aria-pressed="false" style="--c:var(--c-5c)" data-cap="The 5th Column &middot; Launches, dealmaking events and earned media for culture, fashion and web3 brands."><span class="dot" aria-hidden="true"></span>The 5th Column</button>
+      <button type="button" data-filter="jav" aria-pressed="false" style="--c:var(--c-jav)" data-cap="Javelin &middot; Washington, DC. Book launches, galas and campaigns for publishers, foundations and brands."><span class="dot" aria-hidden="true"></span>Javelin</button>
+      <p class="wcount" id="clcount">57 shown</p>
+    </div>
+    <p class="clcap" id="clcap" style="--c:var(--ink)">Five chapters, 57 clients and partners. Hover or tap any name to see the work.</p>
+    <ul class="clgrid">
+        <li class="cl" data-era="bridger" tabindex="0"><span class="cl-name">Top-5 global asset manager</span><span class="cl-era">Bridger</span><span class="cl-note">Largest client in the firm&rsquo;s history</span></li>
+        <li class="cl" data-era="bridger" tabindex="0"><span class="cl-name">Google</span><span class="cl-era">Bridger</span><span class="cl-note">Enterprise research account</span></li>
+        <li class="cl" data-era="bridger" tabindex="0"><span class="cl-name">UTA</span><span class="cl-era">Bridger</span><span class="cl-note">Enterprise research account</span></li>
+        <li class="cl" data-era="bridger" tabindex="0"><span class="cl-name">Sonos</span><span class="cl-era">Bridger</span><span class="cl-note">Enterprise research</span></li>
+        <li class="cl" data-era="bridger" tabindex="0"><span class="cl-name">Verizon</span><span class="cl-era">Bridger</span><span class="cl-note">Enterprise research</span></li>
+        <li class="cl" data-era="bridger" tabindex="0"><span class="cl-name">Iron Mountain</span><span class="cl-era">Bridger</span><span class="cl-note">Enterprise research</span></li>
+        <li class="cl" data-era="bridger" tabindex="0"><span class="cl-name">Baker Tilly</span><span class="cl-era">Bridger</span><span class="cl-note">Enterprise research</span></li>
+        <li class="cl" data-era="conv" tabindex="0"><span class="cl-name">Sandbar</span><span class="cl-era">C&Oslash;NVERGENCE</span><span class="cl-note">Series A &middot; creator and marketing strategy</span></li>
+        <li class="cl" data-era="conv" tabindex="0"><span class="cl-name">Retrospect Studios</span><span class="cl-era">C&Oslash;NVERGENCE</span><span class="cl-note">Publicis Groupe &middot; messaging and media strategy</span></li>
+        <li class="cl" data-era="conv" tabindex="0"><span class="cl-name">The 5th Column</span><span class="cl-era">C&Oslash;NVERGENCE</span><span class="cl-note">Strategic advisory</span></li>
+        <li class="cl" data-era="conv" tabindex="0"><span class="cl-name">Butterfly Effect</span><span class="cl-era">C&Oslash;NVERGENCE</span><span class="cl-note">Strategic advisory</span></li>
+        <li class="cl" data-era="conv" tabindex="0"><span class="cl-name">NOX Media</span><span class="cl-era">C&Oslash;NVERGENCE</span><span class="cl-note">$2M+ in client accounts, RFP to win</span></li>
+        <li class="cl" data-era="conv" tabindex="0"><span class="cl-name">Untold</span><span class="cl-era">C&Oslash;NVERGENCE</span><span class="cl-note">U.S. expansion PR</span></li>
+        <li class="cl" data-era="conv" tabindex="0"><span class="cl-name">Endurance</span><span class="cl-era">C&Oslash;NVERGENCE</span><span class="cl-note">Strategic advisory</span></li>
+        <li class="cl" data-era="conv" tabindex="0"><span class="cl-name">Ikonic Yachts</span><span class="cl-era">C&Oslash;NVERGENCE</span><span class="cl-note">Key account &middot; fractional social</span></li>
+        <li class="cl" data-era="conv" tabindex="0"><span class="cl-name">Rich Roll</span><span class="cl-era">C&Oslash;NVERGENCE</span><span class="cl-note">Key account &middot; podcast</span></li>
+        <li class="cl" data-era="conv" tabindex="0"><span class="cl-name">TRUFF</span><span class="cl-era">C&Oslash;NVERGENCE</span><span class="cl-note">Key account &middot; fractional social</span></li>
+        <li class="cl" data-era="conv" tabindex="0"><span class="cl-name">Are We On Air?</span><span class="cl-era">C&Oslash;NVERGENCE</span><span class="cl-note">Key account &middot; podcast</span></li>
+        <li class="cl" data-era="bfx" tabindex="0"><span class="cl-name">FIFA</span><span class="cl-era">Butterfly Effect</span><span class="cl-note">Agency campaign</span></li>
+        <li class="cl" data-era="bfx" tabindex="0"><span class="cl-name">Meta</span><span class="cl-era">Butterfly Effect</span><span class="cl-note">Agency campaign</span></li>
+        <li class="cl" data-era="bfx" tabindex="0"><span class="cl-name">Nike</span><span class="cl-era">Butterfly Effect</span><span class="cl-note">Crois pas qu&rsquo;on dort &middot; 23.2M views</span></li>
+        <li class="cl" data-era="bfx" tabindex="0"><span class="cl-name">Square</span><span class="cl-era">Butterfly Effect</span><span class="cl-note">Signed, renewed and expanded</span></li>
+        <li class="cl" data-era="bfx" tabindex="0"><span class="cl-name">Bumble</span><span class="cl-era">Butterfly Effect</span><span class="cl-note">63.8M+ unique monthly views</span></li>
+        <li class="cl" data-era="bfx" tabindex="0"><span class="cl-name">Netflix</span><span class="cl-era">Butterfly Effect</span><span class="cl-note">Agency campaign</span></li>
+        <li class="cl" data-era="bfx" tabindex="0"><span class="cl-name">McDonald&rsquo;s</span><span class="cl-era">Butterfly Effect</span><span class="cl-note">Signed, renewed and expanded</span></li>
+        <li class="cl" data-era="bfx" tabindex="0"><span class="cl-name">WeTransfer</span><span class="cl-era">Butterfly Effect</span><span class="cl-note">Signed, renewed and expanded</span></li>
+        <li class="cl" data-era="bfx" tabindex="0"><span class="cl-name">The Cheesecake Factory</span><span class="cl-era">Butterfly Effect</span><span class="cl-note">Agency campaign</span></li>
+        <li class="cl" data-era="bfx" tabindex="0"><span class="cl-name">HERA</span><span class="cl-era">Butterfly Effect</span><span class="cl-note">Rachel Daly &middot; sold-out drop</span></li>
+        <li class="cl" data-era="bfx" tabindex="0"><span class="cl-name">Movella</span><span class="cl-era">Butterfly Effect</span><span class="cl-note">Agency campaign</span></li>
+        <li class="cl" data-era="bfx" tabindex="0"><span class="cl-name">Sera</span><span class="cl-era">Butterfly Effect</span><span class="cl-note">Agency campaign</span></li>
+        <li class="cl" data-era="5c" tabindex="0"><span class="cl-name">The Sandbox</span><span class="cl-era">The 5th Column</span><span class="cl-note">SXSW launch into a $1M NFT NYC showcase</span></li>
+        <li class="cl" data-era="5c" tabindex="0"><span class="cl-name">Macy&rsquo;s</span><span class="cl-era">The 5th Column</span><span class="cl-note">Maluma campaign</span></li>
+        <li class="cl" data-era="5c" tabindex="0"><span class="cl-name">Birkenstock</span><span class="cl-era">The 5th Column</span><span class="cl-note">Pre-IPO anniversary showcase</span></li>
+        <li class="cl" data-era="5c" tabindex="0"><span class="cl-name">Virgin Hotels</span><span class="cl-era">The 5th Column</span><span class="cl-note">Launch &amp; events</span></li>
+        <li class="cl" data-era="5c" tabindex="0"><span class="cl-name">CFDA &times; The Sandbox</span><span class="cl-era">The 5th Column</span><span class="cl-note">Fashion in the metaverse</span></li>
+        <li class="cl" data-era="5c" tabindex="0"><span class="cl-name">ZOA Energy</span><span class="cl-era">The 5th Column</span><span class="cl-note">Launch &amp; events</span></li>
+        <li class="cl" data-era="5c" tabindex="0"><span class="cl-name">FlickPlay</span><span class="cl-era">The 5th Column</span><span class="cl-note">Lightspeed-backed &middot; earned media</span></li>
+        <li class="cl" data-era="5c" tabindex="0"><span class="cl-name">Danvas</span><span class="cl-era">The 5th Column</span><span class="cl-note">$7M seed placed on Cheddar</span></li>
+        <li class="cl" data-era="5c" tabindex="0"><span class="cl-name">BlockBar</span><span class="cl-era">The 5th Column</span><span class="cl-note">Launch &amp; events</span></li>
+        <li class="cl" data-era="5c" tabindex="0"><span class="cl-name">Doodles</span><span class="cl-era">The 5th Column</span><span class="cl-note">NFT NYC and Art Basel productions</span></li>
+        <li class="cl" data-era="5c" tabindex="0"><span class="cl-name">Rumble Kong League</span><span class="cl-era">The 5th Column</span><span class="cl-note">Paul George &times; Boardroom feature</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">SpaceX</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">Rumsfeld Foundation</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">AEI</span><span class="cl-era">Javelin</span><span class="cl-note">Arthur Brooks</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">Penguin Random House</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">Simon &amp; Schuster</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">HarperCollins</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">Macmillan</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">Hachette Book Group</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">Encounter Books</span><span class="cl-era">Javelin</span><span class="cl-note">Encounter 20 Gala &middot; ~$1M raised</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">Operation Underground Railroad</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">Middle East Institute</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">StoryCorps</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">Churchill Solitaire</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">Travis Manion Foundation</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">Black Rifle Coffee</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+        <li class="cl" data-era="jav" tabindex="0"><span class="cl-name">NineLine Apparel</span><span class="cl-era">Javelin</span><span class="cl-note">Events &amp; campaigns</span></li>
+    </ul>
+
+    <div class="venture">
+      <p class="kicker">Venture network</p>
+      <h3 class="vh">The funds behind the founders</h3>
+      <p class="vintro">Portfolio companies I&rsquo;ve worked with, grouped by the investors backing them. Pill colours match the chapter the work came from.</p>
+      <div class="vgrid">
+        <div class="vcard"><h4>Adjacent</h4><p class="vlabel">Backed</p><ul><li style="--c:var(--c-conv)">Sandbar <span>&middot; $23M Series A</span></li></ul></div>
+        <div class="vcard"><h4>Kindred Ventures</h4><p class="vlabel">Backed</p><ul><li style="--c:var(--c-conv)">Sandbar <span>&middot; $23M Series A</span></li></ul></div>
+        <div class="vcard"><h4>Lerer Hippeau</h4><p class="vlabel">Backed</p><ul><li style="--c:var(--c-5c)">Danvas <span>&middot; $7M seed</span></li><li style="--c:var(--c-5c)">Spatial</li></ul></div>
+        <div class="vcard"><h4>Greycroft</h4><p class="vlabel">Backed</p><ul><li style="--c:var(--c-5c)">Danvas <span>&middot; $7M seed</span></li></ul></div>
+        <div class="vcard"><h4>Seven Seven Six</h4><p class="vlabel">Backed</p><ul><li style="--c:var(--c-5c)">Doodles</li></ul></div>
+        <div class="vcard"><h4>Lightspeed</h4><p class="vlabel">Backed</p><ul><li style="--c:var(--c-5c)">FlickPlay</li></ul></div>
+        <div class="vcard"><h4>SoftBank Vision Fund 2</h4><p class="vlabel">Backed</p><ul><li style="--c:var(--c-5c)">The Sandbox</li></ul></div>
+        <div class="vcard"><h4>CAA Sports</h4><p class="vlabel">Backed</p><ul><li style="--c:var(--c-5c)">Rumble Kong League</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="index" id="index">
+  <div class="wrap">
+    <p class="kicker">Index</p>
+    <h2 class="hd">Industry chops</h2>
+    <div class="ix">
+
+      <article class="ixrow">
+        <div class="ixno">01</div>
+        <div class="ixbody">
+          <button class="ixtoggle" type="button" aria-expanded="false" aria-controls="job01">
+            <h3>Bridger Consulting Group</h3><span class="ixmark" aria-hidden="true"></span>
+          </button>
+          <div class="ixdetail" id="job01"><div>
+            <p class="ixrole">Senior Associate, Business Development &middot; New York, NY</p>
+          <ul>
+            <li>Originate and close new business across private equity, private credit and hedge funds, running the full sales cycle.</li>
+            <li>Landed the <b>largest client in company history</b> &mdash; a top-5 global CLO manager with $97B AUM.</li>
+            <li>Grew the active book by <b>+285%</b>, adding a top talent agency to the roster.</li>
+          </ul>
+          </div></div>
+        </div>
+      </article>
+
+      <article class="ixrow">
+        <div class="ixno">02</div>
+        <div class="ixbody">
+          <button class="ixtoggle" type="button" aria-expanded="false" aria-controls="job02">
+            <h3>C&Oslash;NVERGENCE</h3><span class="ixmark" aria-hidden="true"></span>
+          </button>
+          <div class="ixdetail" id="job02"><div>
+            <p class="ixrole">Strategic Advisor &middot; Brooklyn, NY</p>
+          <ul>
+            <li>Advise founders from pre-seed to Series A on go-to-market and launches.</li>
+            <li>Managed <b>$2M+ in client accounts</b> for NOX Media and led pitches from RFI/RFP through win.</li>
+            <li>Led PR for Untold&rsquo;s U.S. expansion, announced on Business Wire and picked up by Yahoo Finance.</li>
+            <li>Advisor to <b>Retrospect Studios</b> on messaging and media strategy ahead of launch.</li>
+            <li>Ran media production and social for <i>The Trenches</i>, the crypto show hosted by 6th Man Ventures GP Carl Vogel.</li>
+          </ul>
+          </div></div>
+        </div>
+      </article>
+
+      <article class="ixrow">
+        <div class="ixno">03</div>
+        <div class="ixbody">
+          <button class="ixtoggle" type="button" aria-expanded="false" aria-controls="job03">
+            <h3>Butterfly Effect</h3><span class="ixmark" aria-hidden="true"></span>
+          </button>
+          <div class="ixdetail" id="job03"><div>
+            <p class="ixrole">Founding Team, Business Development &amp; Marketing &middot; NYC &amp; London</p>
+          <ul>
+            <li>Launched the agency from scratch to <b>&pound;1M+ ARR</b>, securing its founding clients.</li>
+            <li>Signed McDonald&rsquo;s, HERA, Square and WeTransfer, then renewed and expanded them.</li>
+            <li><b>Best Small Agency 2024</b> &mdash; Global Agency Awards and European Agency Awards; Independent Agency to Watch, Prolific North 2024.</li>
+          </ul>
+          </div></div>
+        </div>
+      </article>
+
+      <article class="ixrow">
+        <div class="ixno">04</div>
+        <div class="ixbody">
+          <button class="ixtoggle" type="button" aria-expanded="false" aria-controls="job04">
+            <h3>The 5th Column</h3><span class="ixmark" aria-hidden="true"></span>
+          </button>
+          <div class="ixdetail" id="job04"><div>
+            <p class="ixrole">Senior Account Executive &middot; New York, NY</p>
+          <ul>
+            <li>Led The Sandbox&rsquo;s website redesign, and the launch of <b>HSBC&rsquo;s entry onto the platform</b> &mdash; the first global financial services provider to go in.</li>
+            <li>Grew The Sandbox&rsquo;s SXSW launch into a <b>$1M NFT NYC showcase</b> with Sony, Gucci, Warner Music, TIME and Lionsgate.</li>
+            <li>Produced <b>25+ dealmaking events</b> at SXSW, NFT NYC and Art Basel, directing $2.5M in client spend.</li>
+            <li>Placed Danvas&rsquo;s $7M seed round on Cheddar TV; earned 500+ pieces of coverage for venture-backed clients.</li>
+          </ul>
+          </div></div>
+        </div>
+      </article>
+
+      <article class="ixrow">
+        <div class="ixno">05</div>
+        <div class="ixbody">
+          <button class="ixtoggle" type="button" aria-expanded="false" aria-controls="job05">
+            <h3>Publicis Sapient</h3><span class="ixmark" aria-hidden="true"></span>
+          </button>
+          <div class="ixdetail" id="job05"><div>
+            <p class="ixrole">Associate, Marketing &amp; Communications &middot; New York, NY</p>
+          <ul>
+            <li>Placed executives in Bloomberg, CNBC, the Financial Times, Forbes and Barron&rsquo;s, with earnings commentary on Tesla, Nike, Netflix and PayPal.</li>
+            <li><b>Doubled coverage</b>, from 318 to 621 clippings.</li>
+          </ul>
+          </div></div>
+        </div>
+      </article>
+
+      <article class="ixrow">
+        <div class="ixno">06</div>
+        <div class="ixbody">
+          <button class="ixtoggle" type="button" aria-expanded="false" aria-controls="job06">
+            <h3>Javelin</h3><span class="ixmark" aria-hidden="true"></span>
+          </button>
+          <div class="ixdetail" id="job06"><div>
+            <p class="ixrole">Producer &amp; Account Manager &middot; Washington, DC</p>
+          <ul>
+            <li>Producer on James Comey&rsquo;s <i>A Higher Loyalty</i> release party &mdash; bookings, media access and event aesthetics end to end.</li>
+            <li>Producer on Donna Brazile&rsquo;s <i>Hacks</i> release party, curating press access and managing the principal&rsquo;s experience.</li>
+            <li>Account Manager on the Encounter 20 Gala: delivered under budget and <b>63% over the fundraising goal</b> &mdash; close to $1M raised on the night.</li>
+          </ul>
+          </div></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="capblock">
+      <div>
+        <h4>Commercial</h4>
+        <p>Full-Cycle Sales &middot; Business Development &middot; Account Management &middot; Partnerships &middot; MEDDPICC / MEDDIC / BANT &middot; Product Demos</p>
+      </div>
+      <div>
+        <h4>Craft</h4>
+        <p>PR &amp; Media Relations &middot; Community Building &middot; Event Management &middot; Content Strategy &middot; Video &amp; Podcast Production &middot; Social</p>
+      </div>
+      <div>
+        <h4>AI-native</h4>
+        <p>Claude (skills, agents, AI-assisted prospecting) &middot; ElevenLabs &middot; Higgsfield &middot; Wispr Flow &middot; Figma &middot; Notion &middot; GitHub</p>
+      </div>
+      <div>
+        <h4>Education</h4>
+        <p>B.A. Organizational Communications &amp; Business, Calvin University &middot; Moonshot Young Leader 2024</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-red" id="convergence">
+  <div class="wrap">
+    <p class="kicker">C&Oslash;NVERGENCE</p>
+    <h2 class="hd">Where things come together</h2>
+    <p class="lede">Strategic brand, marketing and program leadership for high-growth startups &mdash; senior leadership before you&rsquo;re ready to hire a full-time executive. Seed to Series C. Sometimes I take the seat. Sometimes I find the operator who should, and stay accountable for the outcome.</p>
+    <a class="btn btn-white" href="advisory.html#top">Advisory practice &rarr;</a>
+    <p class="recent"><b>Recent engagements.</b> Sandbar (Series A) &middot; Valka AI (pre-seed) &middot; NOX Media &middot; Retrospect Studios &middot; Untold, U.S. &middot; <i>The Trenches</i>.</p>
+  </div>
+</section>
+
+<section class="built" id="built">
+  <div class="wrap">
+    <p class="kicker">Ventures</p>
+    <h2 class="hd">Built from zero</h2>
+    <ul class="ledger">
+      <li><span class="lg-name">C&Oslash;NVERGENCE</span><span class="lg-what">Advisory and studio for high-growth founders, backed by a highly trusted, talent-dense network.</span><span class="lg-mark"><span class="since">Operating</span></span></li>
+      <li><span class="lg-name">Butterfly Effect</span><span class="lg-what">Founding team. Signed the first clients and took a London agency from a standing start.</span><span class="lg-mark"><span class="since">Zero to &pound;1M+ ARR</span></span></li>
+      <li><span class="lg-name">Sat&#363;rday Service</span><span class="lg-what">Social impact nights for early-career New Yorkers.</span><span class="lg-mark"><span class="since">Since Q1 2024</span></span></li>
+      <li><span class="lg-name">VLG</span><span class="lg-what">A community making the city a village.</span><span class="lg-mark"><span class="since">Since Q3 2024</span></span></li>
+      <li><span class="lg-name">A B&#363;rning Heart</span><span class="lg-what">Docuseries, pitched and in development.</span><span class="lg-mark"><span class="since">Teaser, 2025</span></span></li>
+      <li><span class="lg-name">8 to 10 Dinners</span><span class="lg-what">Invite-only dinner series.</span><span class="lg-mark"><span class="since">Since Q1 2026</span></span></li>
+      <li><span class="lg-name">Ritz &amp; Repeat</span><span class="lg-what">Podcast on the relationships behind great careers.</span><span class="lg-mark"><span class="badge">Q1 2027</span></span></li>
+    </ul>
+    <div class="nextup">
+      <p class="kicker">What&rsquo;s next</p>
+      <p class="soon">Coming soon&hellip;</p>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="contact">
+  <div class="wrap closing-grid">
+    <div class="closing-talk">
+      <p class="kicker">Contact</p>
+      <h2 class="hd">Let&rsquo;s talk</h2>
+      <p class="mail" id="email">ritzmpindi@gmail.com</p>
+      <button class="copy" id="copy" type="button">Copy address</button>
+      <div class="elsewhere">
+        <a href="https://www.linkedin.com/in/ritz-mpindi-047686101" target="_blank" rel="me noopener">LinkedIn</a><a href="https://www.instagram.com/ritzairlines" target="_blank" rel="me noopener">Instagram</a><a href="https://x.com/ritzairlines" target="_blank" rel="me noopener">X</a><a href="advisory.html#top">Advisory</a>
+      </div>
+    </div>
+    <div class="closing-cv" id="request">
+      <p class="kicker">Curriculum vitae</p>
+      <h2 class="hd hd-sm">Request the CV</h2>
+      <form id="cvform" name="cv-request" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="cv-request">
+        <p hidden><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="fields">
+          <label for="f-name"><span>Name</span><input id="f-name" name="name" type="text" autocomplete="name" required></label>
+          <label for="f-co"><span>Company</span><input id="f-co" name="company" type="text" autocomplete="organization"></label>
+          <label for="f-email"><span>Email</span><input id="f-email" name="email" type="email" autocomplete="email" required></label>
+          <label for="f-why"><span>Context</span><input id="f-why" name="context" type="text"></label>
+        </div>
+        <button class="btn btn-fill" type="submit">Send request</button>
+      </form>
+      <div class="reqok" id="reqok" hidden>
+        <p class="rtitle">Request sent</p>
+        <p class="rokline">Thank you. I&rsquo;ll reply to <b id="reqok-email"></b>, usually the same day.</p>
+      </div>
+      <div class="reqout" id="reqout" hidden>
+        <p class="rtitle">Ready to send</p>
+        <pre id="reqtext"></pre>
+        <div class="racts">
+          <button class="copy" id="reqcopy" type="button">Copy request</button>
+          <a class="copy" id="reqmail" href="#">Open in mail</a>
+        </div>
+        <p class="rnote">Send to <b>ritzmpindi@gmail.com</b> &mdash; I reply the same day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Ritz Mpindi</span>
+    <nav class="ft-nav" aria-label="Footer"><a href="#work">Work</a><a href="#convening">Convening</a><a href="#clients">Clients</a><a href="#index">Index</a><a href="advisory.html#top">Advisory</a></nav>
+    <span>New York City</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function wire(barId,itemSel,countId){
+    var bar=document.getElementById(barId),count=document.getElementById(countId);
+    if(!bar)return;
+    var btns=bar.querySelectorAll('button');
+    var items=document.querySelectorAll(itemSel);
+    bar.addEventListener('click',function(e){
+      var b=e.target.closest('button');
+      if(!b)return;
+      var k=b.getAttribute('data-filter'),shown=0;
+      for(var i=0;i<btns.length;i++){btns[i].setAttribute('aria-pressed',btns[i]===b?'true':'false')}
+      for(var j=0;j<items.length;j++){
+        var match=(k==='all'||items[j].getAttribute('data-kind')===k);
+        items[j].hidden=!match;
+        if(match)shown++;
+      }
+      if(count)count.textContent=shown+' shown';
+    });
+  }
+  wire('filters','.works .work','wcount');
+  wire('convfilters','.convworks .work','convcount');
+})();
+(function(){
+  var gates=document.querySelectorAll('.shot-play');
+  for(var i=0;i<gates.length;i++){
+    gates[i].addEventListener('click',function(){
+      if(this.querySelector('iframe'))return;
+      var fig=this.closest('[data-yt]');
+      var id=fig&&fig.getAttribute('data-yt');
+      if(!id)return;
+      var f=document.createElement('iframe');
+      var st=fig.getAttribute('data-start');
+      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0'+(st?'&start='+st:'');
+      f.title='Film';
+      f.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture');
+      f.setAttribute('allowfullscreen','');
+      this.appendChild(f);
+    });
+  }
+})();
+(function(){
+  var bar=document.getElementById('clfilters');
+  if(!bar)return;
+  var btns=bar.querySelectorAll('button'),tiles=document.querySelectorAll('.clgrid .cl');
+  var cap=document.getElementById('clcap'),cnt=document.getElementById('clcount');
+  bar.addEventListener('click',function(e){
+    var b=e.target.closest('button');
+    if(!b)return;
+    var k=b.getAttribute('data-filter'),n=0;
+    for(var i=0;i<btns.length;i++){btns[i].setAttribute('aria-pressed',btns[i]===b?'true':'false')}
+    for(var j=0;j<tiles.length;j++){
+      var show=(k==='all'||tiles[j].getAttribute('data-era')===k);
+      tiles[j].hidden=!show;
+      if(show)n++;
+    }
+    if(cap){cap.innerHTML=b.getAttribute('data-cap');cap.style.setProperty('--c',b.style.getPropertyValue('--c'))}
+    if(cnt)cnt.textContent=n+' shown';
+  });
+})();
+(function(){
+  var btn=document.getElementById('ritz-toggle'),panel=document.getElementById('ritz-panel');
+  if(!btn||!panel)return;
+  function isOpen(){return panel.classList.contains('open')}
+  function setOpen(o){
+    if(o){panel.style.maxHeight=Math.max(240,window.innerHeight-panel.parentNode.getBoundingClientRect().bottom)+'px'}
+    panel.classList.toggle('open',o);
+    btn.setAttribute('aria-expanded',o?'true':'false');
+    panel.setAttribute('aria-hidden',o?'false':'true');
+    if(!o){var fr=panel.querySelectorAll('iframe');for(var i=0;i<fr.length;i++){fr[i].parentNode.removeChild(fr[i])}}
+  }
+  btn.addEventListener('click',function(e){e.stopPropagation();setOpen(!isOpen())});
+  panel.querySelector('.rp-close').addEventListener('click',function(){setOpen(false);btn.focus()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&isOpen()){setOpen(false);btn.focus()}});
+  document.addEventListener('click',function(e){if(isOpen()&&!panel.contains(e.target)&&!btn.contains(e.target))setOpen(false)});
+  function fromHash(){if(location.hash==='#ritz'){setOpen(true)}}
+  window.addEventListener('hashchange',fromHash);fromHash();
+})();
+(function(){
+  var toggles=document.querySelectorAll('.ixtoggle');
+  for(var i=0;i<toggles.length;i++){
+    toggles[i].addEventListener('click',function(){
+      var row=this.closest('.ixrow');
+      if(!row)return;
+      var isOpen=row.classList.toggle('open');
+      this.setAttribute('aria-expanded',isOpen?'true':'false');
+    });
+  }
+})();
+(function(){
+  var ENDPOINT=''; /* set by the live build: '/' on Netlify, or a Formspree URL */
+  var f=document.getElementById('cvform');
+  if(!f)return;
+  var out=document.getElementById('reqout'),txt=document.getElementById('reqtext'),ml=document.getElementById('reqmail');
+  var ok=document.getElementById('reqok'),okEmail=document.getElementById('reqok-email'),sub=f.querySelector('button[type="submit"]');
+  var g=function(id){var el=document.getElementById(id);return el?el.value.trim():''};
+  function compose(name,co,em,why){
+    var body='Hi Ritz,\n\nCould you send over your CV?\n\nName: '+name
+      +(co?'\nCompany: '+co:'')
+      +'\nEmail: '+em
+      +(why?'\nContext: '+why:'')
+      +'\n\nThanks.';
+    txt.textContent=body;
+    ml.setAttribute('href','mailto:ritzmpindi@gmail.com?subject='+encodeURIComponent('CV request \u2014 '+name+(co?' ('+co+')':''))+'&body='+encodeURIComponent(body));
+    out.hidden=false;
+    out.scrollIntoView({block:'nearest'});
+  }
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=g('f-name'),co=g('f-co'),em=g('f-email'),why=g('f-why');
+    if(!name){document.getElementById('f-name').focus();return}
+    if(!em||em.indexOf('@')<1){document.getElementById('f-email').focus();return}
+    if(!ENDPOINT||!window.fetch||!window.URLSearchParams){compose(name,co,em,why);return}
+    sub.disabled=true;sub.textContent='Sending\u2026';
+    fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},body:new URLSearchParams(new FormData(f)).toString()})
+      .then(function(r){
+        if(!r.ok)throw new Error('send failed');
+        f.hidden=true;out.hidden=true;okEmail.textContent=em;ok.hidden=false;
+      })
+      .catch(function(){sub.disabled=false;sub.textContent='Send request';compose(name,co,em,why)});
+  });
+  var rc=document.getElementById('reqcopy');
+  rc.addEventListener('click',function(){
+    var done=function(){rc.textContent='Copied';setTimeout(function(){rc.textContent='Copy request'},1800)};
+    var fail=function(){try{var r=document.createRange();r.selectNodeContents(txt);var s=window.getSelection();s.removeAllRanges();s.addRange(r);rc.textContent='Selected \u2014 press \u2318C';setTimeout(function(){rc.textContent='Copy request'},2600)}catch(e){}};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt.textContent).then(done,fail)}else{fail()}
+  });
+})();
+(function(){
+  var btn=document.getElementById('copy'),el=document.getElementById('email');
+  if(!btn||!el)return;
+  btn.addEventListener('click',function(){
+    var done=function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy address'},1800)};
+    var fallback=function(){try{var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected — press ⌘C';setTimeout(function(){btn.textContent='Copy address'},2600)}catch(e){}};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(el.textContent.trim()).then(done,fallback)}else{fallback()}
+  });
+})();
+</script>
+
+</body></html>

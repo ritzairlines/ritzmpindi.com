@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CØNVERGENCE Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<style>
+/* Layout: broadsheet companion — masthead, a red manifesto band, six capability columns, then engagement tiers with scope but no rate card. */
+:root{
+  --paper:#FBFAF8;--paper-2:#F1EFE9;--ink:#111113;--red:#CE3118;--grey:#55555A;--rule:#111113;
+  --disp:"Anton",Impact,"Haettenschweiler",sans-serif;
+  --text:"Newsreader",Georgia,"Times New Roman",serif;
+  --util:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--text);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+[hidden]{display:none!important}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+.wrap{max-width:72rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{margin:0;text-wrap:balance;font-weight:400}
+a{color:inherit}
+p{margin:0}
+.kicker{font-family:var(--util);font-size:.6875rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin:0 0 .7rem}
+.hd{font-family:var(--disp);font-size:clamp(2rem,5.5vw,3.5rem);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;max-width:34rem}
+
+.masthead{position:sticky;top:env(safe-area-inset-top,0px);z-index:29;background:var(--paper);border-bottom:2px solid var(--rule)}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.65rem}
+.mh-name{font-family:var(--disp);font-size:1.125rem;letter-spacing:.02em;text-transform:uppercase;text-decoration:none}
+.mh-nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.35rem clamp(.7rem,2.2vw,1.6rem)}
+.mh-nav a{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding-bottom:2px;border-bottom:2px solid transparent;transition:border-color .15s,color .15s}
+.mh-nav a:hover,.mh-nav a:focus-visible,.mh-nav a[aria-current="page"]{color:var(--red);border-color:var(--red)}
+
+/* hero */
+.hero{border-bottom:10px solid var(--rule)}
+.hero .wrap{padding-block:clamp(2rem,4.5vw,3.25rem)}
+.lockup{font-family:var(--disp);font-size:clamp(2.5rem,13vw,8.5rem);line-height:.84;letter-spacing:-.025em;text-transform:uppercase;word-break:break-word}
+.lockup em{font-style:normal;color:var(--red)}
+.sub{font-family:var(--util);font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-top:1rem;border-top:3px solid var(--red);padding-top:.7rem;max-width:40rem;line-height:1.9}
+.deck{font-family:var(--text);font-size:clamp(1.25rem,3vw,1.875rem);line-height:1.3;max-width:34rem;margin-top:1.5rem}
+.deck i{font-style:italic;color:var(--red)}
+
+/* red band */
+.band-red{background:var(--red);color:#fff;border-bottom:2px solid var(--rule)}
+.band-red .wrap{padding-block:clamp(2.5rem,5vw,3.75rem)}
+.band-red .kicker{color:#fff}
+.band-red .hd{color:#fff}
+.band-red .lede{font-size:clamp(1.0625rem,2.2vw,1.25rem);line-height:1.5;max-width:38rem;margin-top:1.25rem;color:#fff}
+.stepgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.75rem;margin-top:2.5rem}
+.step{min-width:0;border-top:3px solid #fff;padding-top:.9rem}
+.step .n{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#fff}
+.step h3{font-family:var(--disp);font-size:1.5rem;text-transform:uppercase;letter-spacing:-.01em;margin-top:.5rem;color:#fff}
+.step p{margin-top:.6rem;font-size:.9375rem;line-height:1.5;color:#fff}
+.recent{margin-top:2rem;border-top:2px solid #fff;padding-top:1rem;font-family:var(--util);font-size:.8125rem;font-weight:500;line-height:1.8;color:#fff;max-width:46rem}
+.recent b{font-weight:600}
+
+/* bench */
+.bench{border-bottom:2px solid var(--rule)}
+.bench .wrap{padding-block:clamp(2.5rem,5vw,3.5rem)}
+.benchlede{max-width:40rem;margin-top:1.1rem;color:var(--grey)}
+.benchgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1px;background:var(--rule);border:2px solid var(--rule);margin-top:2rem}
+.benchgrid div{background:var(--paper);padding:.9rem 1rem;min-width:0;font-family:var(--util);font-size:.8125rem;font-weight:500;line-height:1.4}
+.benchgrid b{display:block;font-weight:600;color:var(--red);font-size:.5625rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.3rem}
+
+/* accordion */
+.acc{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;background:none;border:0;padding:.35rem 0 0;margin:0;cursor:pointer;text-align:left;color:var(--ink);font:inherit;transition:color .15s}
+.acc:hover{color:var(--red)}
+.acc[aria-expanded="true"]{color:var(--red)}
+.acc h3{color:inherit}
+.ixmark{position:relative;width:.85rem;height:.85rem;flex:none}
+.ixmark::before,.ixmark::after{content:"";position:absolute;left:50%;top:50%;background:currentColor;transform:translate(-50%,-50%)}
+.ixmark::before{width:100%;height:2px}
+.ixmark::after{width:2px;height:100%;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.acc[aria-expanded="true"] .ixmark::after{transform:translate(-50%,-50%) scaleY(0)}
+.accdetail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .42s cubic-bezier(.22,1,.36,1)}
+.accdetail.open{grid-template-rows:1fr}
+.accdetail>div{overflow:hidden;min-height:0}
+.hd.stack span{display:block}
+.hd.stack span+span{color:var(--red)}
+.banners{margin-top:1.5rem;border-top:2px solid var(--rule)}
+.banner{border-bottom:2px solid var(--rule)}
+.bannerbtn{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;padding:1.05rem 0;background:none;border:0;cursor:pointer;color:var(--ink);font:inherit;text-align:left;transition:color .15s,padding-left .3s cubic-bezier(.22,1,.36,1)}
+.bannerbtn:hover{color:var(--red);padding-left:.7rem}
+.bannerbtn[aria-expanded="true"]{color:var(--red);padding-left:.7rem}
+.bname{font-family:var(--disp);font-size:clamp(1.125rem,2.6vw,1.5rem);text-transform:uppercase;letter-spacing:-.01em;line-height:1.1}
+.banner .accdetail>div>p{margin:0 0 1.1rem;font-size:.9375rem;line-height:1.55;color:var(--grey);max-width:42rem}
+.blabel{font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-top:2.25rem}
+.acc:active{transform:scale(.99)}
+.copy:active{transform:scale(.96)}
+.benchgrid div,.pkg{transition:transform .25s cubic-bezier(.22,1,.36,1)}
+.benchgrid div:hover,.pkg:hover{transform:translateY(-3px)}
+@media (prefers-reduced-motion:reduce){.accdetail,.ixmark::after,.benchgrid div,.pkg{transition:none}.benchgrid div:hover,.pkg:hover{transform:none}}
+
+/* capabilities */
+.caps-sec{border-bottom:2px solid var(--rule)}
+.caps-sec .wrap{padding-block:clamp(2.5rem,5vw,3.5rem)}
+.capintro{max-width:36rem;margin-top:1.1rem;color:var(--grey)}
+.svcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2.25rem 1.75rem;margin-top:2.25rem}
+.svc{min-width:0;border-top:2px solid var(--rule);padding-top:.9rem}
+.svc .n{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.12em;color:var(--red);font-variant-numeric:tabular-nums}
+.svc h3{font-family:var(--disp);font-size:1.1875rem;text-transform:uppercase;letter-spacing:-.005em;line-height:1.15;margin-top:.45rem}
+.svc .promise{margin-top:.4rem;font-size:.9375rem;color:var(--grey);line-height:1.5}
+.svc ul{margin:.8rem 0 0;padding:0;list-style:none}
+.svc li{font-family:var(--util);font-size:.75rem;font-weight:500;line-height:1.95;color:var(--ink);border-bottom:1px solid rgba(17,17,19,.12)}
+.svc .delivers{margin-top:.8rem;font-family:var(--util);font-size:.6875rem;font-weight:500;line-height:1.6;color:var(--grey);border-top:2px solid var(--red);padding-top:.5rem}
+.svc .delivers b{display:block;color:var(--ink);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.5625rem;margin-bottom:.3rem}
+.usecases{margin-top:2.25rem;border-top:2px solid var(--rule);padding-top:1.1rem}
+.usecases h4{font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.uclist{font-family:var(--disp);font-size:clamp(1rem,2.6vw,1.5rem);line-height:1.35;text-transform:uppercase;letter-spacing:-.01em;margin-top:.8rem}
+.uclist span{color:var(--red);padding:0 .4rem}
+
+/* packages */
+.pkg-sec{border-bottom:2px solid var(--rule);background:var(--paper-2)}
+.pkg-sec .wrap{padding-block:clamp(2.5rem,5vw,3.5rem)}
+.pkgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.5rem;margin-top:2rem}
+.pkg{min-width:0;border:2px solid var(--rule);padding:1.3rem;background:var(--paper)}
+.pkg .label{font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.pkg h3{font-family:var(--disp);font-size:1.375rem;text-transform:uppercase;margin-top:.4rem;line-height:1.1}
+.pkg .best{margin-top:.45rem;font-size:.875rem;color:var(--grey);line-height:1.45}
+.pkg .commit{font-family:var(--disp);font-size:1.375rem;line-height:1;letter-spacing:-.01em;color:var(--red);margin-top:1.1rem}
+.pkg ul{margin:1rem 0 0;padding:0;list-style:none;border-top:2px solid var(--rule)}
+.pkg li{font-family:var(--util);font-size:.75rem;font-weight:500;line-height:1.95;color:var(--ink);border-bottom:1px solid rgba(17,17,19,.1)}
+.addons{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.5rem 1.75rem;margin-top:2.25rem;border-top:2px solid var(--rule);padding-top:1.2rem}
+.addon{min-width:0}
+.addon h4{font-family:var(--disp);font-size:1.0625rem;text-transform:uppercase;letter-spacing:-.005em;line-height:1.15}
+.addon .i{margin-top:.35rem;font-size:.875rem;color:var(--grey);line-height:1.45}
+.rationale{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:2.25rem;border-top:2px solid var(--rule);padding-top:1.2rem}
+@media (min-width:46rem){.rationale{grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}}
+.rationale h4{font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.rationale p{margin-top:.55rem;font-size:.9375rem;color:var(--grey);line-height:1.55}
+.rationale b{color:var(--ink);font-weight:500}
+
+/* contact */
+.contact .wrap{padding-block:clamp(2.75rem,5.5vw,4.25rem)}
+.closing{font-size:clamp(1.125rem,2.6vw,1.5rem);line-height:1.4;max-width:34rem;margin-top:1.25rem}
+.mail{font-family:var(--disp);font-size:clamp(1.5rem,7.6vw,4.25rem);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;color:var(--red);word-break:break-word;margin-top:1.5rem}
+.copy{margin-top:1.5rem;font-family:var(--util);font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:none;border:2px solid var(--ink);border-radius:999px;color:var(--ink);padding:.7rem 1.25rem;cursor:pointer;transition:background .15s,color .15s}
+.copy:hover,.copy:focus-visible{background:var(--ink);color:var(--paper)}
+.backlink{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:2rem;border-top:2px solid var(--rule);padding-top:1rem}
+.backlink a{font-family:var(--util);font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:2px solid var(--red);padding-bottom:2px}
+.backlink a:hover,.backlink a:focus-visible{color:var(--red)}
+
+footer{border-top:2px solid var(--rule)}
+footer .wrap{padding-block:1.5rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;font-family:var(--util);font-size:.625rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="masthead" id="top">
+  <div class="wrap">
+    <a class="mh-name" href="./">Ritz Mpindi</a>
+    <nav class="mh-nav">
+      <a href="./#work">Work</a><a href="./#convening">Convening</a><a href="./#clients">Clients</a><a href="./#index">Index</a><a href="advisory.html" aria-current="page">Advisory</a><a href="#talk">Contact</a><a href="./#ritz">Ritz</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="lockup">C&Oslash;NVERGENCE<em>.</em></h1>
+    <p class="sub">Where things come together &middot; Strategic brand, marketing &amp; program leadership</p>
+    <p class="deck">Senior marketing leadership <i>before you&rsquo;re ready to hire a full-time executive.</i></p>
+  </div>
+</header>
+
+<section class="band-red">
+  <div class="wrap">
+    <p class="kicker">The method</p>
+    <h2 class="hd">Assess. Align. Activate.</h2>
+    <p class="lede">Fast-growing companies often need senior marketing leadership before they can justify the hire. The work is strategic leadership, operational rigor and execution oversight &mdash; building programs that scale, accelerating launches, and aligning brand, growth and product teams. Seed to Series C.</p>
+    <div class="stepgrid">
+      <div class="step"><p class="n">Stage one</p><h3>Assess</h3><p>Read the position as it stands: audience, platform mix, what performs, and what the market already believes about you.</p></div>
+      <div class="step"><p class="n">Stage two</p><h3>Align</h3><p>Set positioning, pillars and cadence against a defined audience, so every program works toward one outcome.</p></div>
+      <div class="step"><p class="n">Stage three</p><h3>Activate</h3><p>Run the calendar, measure what moves, and keep relationships warm so the growth holds after the campaign ends.</p></div>
+    </div>
+    <p class="recent"><b>Recent engagements.</b> Sandbar (Series A) &middot; Valka AI (pre-seed) &middot; NOX Media &middot; Retrospect Studios &middot; Untold, U.S. &middot; <i>The Trenches</i>.</p>
+  </div>
+</section>
+
+<section class="bench">
+  <div class="wrap">
+    <p class="kicker">The bench</p>
+    <h2 class="hd stack"><span>The team</span><span>L&rsquo;&eacute;quipe</span><span>Die Mannschaft</span></h2>
+    <p class="benchlede">C&Oslash;NVERGENCE is backed by a highly trusted, talent-dense network: the brand designers, paid leads, producers and PR operators Ritz has worked alongside throughout his career. Every engagement draws on it, so the people on your problem have solved it before.</p>
+    <div class="benchgrid">
+      <div><b>Leadership</b>Fractional CMO, VP Marketing, Head of Growth</div>
+      <div><b>Brand</b>Identity, design systems, art direction</div>
+      <div><b>Content</b>Video, podcast, editorial, social production</div>
+      <div><b>Earned</b>PR, media relations, executive thought leadership</div>
+      <div><b>Experiential</b>Events, activations, community programs</div>
+      <div><b>Performance</b>Paid media, lifecycle, marketing ops and data</div>
+    </div>
+  </div>
+</section>
+
+<section class="caps-sec" id="capabilities">
+  <div class="wrap">
+    <p class="kicker">Capabilities</p>
+    <h2 class="hd">Generalist breadth. Specialist depth.</h2>
+    <p class="capintro">Across everything growth touches &mdash; strategy, brand, programs, systems, leadership and the numbers underneath.</p>
+    <div class="svcgrid">
+
+      <div class="svc">
+        <p class="n">01</p>
+        <button class="acc" type="button" aria-expanded="false" aria-controls="svc01">
+          <h3>Marketing strategy &amp; growth architecture</h3><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="svc01"><div>
+          <p class="promise">Build the marketing engine that drives acquisition and adoption.</p>
+        <ul>
+          <li>Go-to-market strategy</li>
+          <li>Brand positioning &amp; narrative</li>
+          <li>Integrated campaign planning</li>
+          <li>Product launch strategy</li>
+          <li>Budget allocation &amp; ROI modeling</li>
+          <li>ICP definition &amp; messaging</li>
+        </ul>
+        <p class="delivers"><b>Delivers</b>Strategy roadmap (90&ndash;180 days) &middot; campaign architecture &middot; messaging framework &middot; GTM playbook &middot; KPI dashboards</p>
+        </div></div>
+      </div>
+
+      <div class="svc">
+        <p class="n">02</p>
+        <button class="acc" type="button" aria-expanded="false" aria-controls="svc02">
+          <h3>Brand &amp; creative operations</h3><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="svc02"><div>
+          <p class="promise">Build the operational infrastructure for marketing and brand teams to execute at scale.</p>
+        <ul>
+          <li>Brand system development</li>
+          <li>Design operations workflows</li>
+          <li>Creative production pipelines</li>
+          <li>Marketing intake frameworks</li>
+          <li>Asset management systems</li>
+          <li>Design collaboration structure</li>
+        </ul>
+        <p class="delivers"><b>Delivers</b>Brand governance framework &middot; design ops playbook &middot; creative workflow system &middot; intake and prioritization model</p>
+        </div></div>
+      </div>
+
+      <div class="svc">
+        <p class="n">03</p>
+        <button class="acc" type="button" aria-expanded="false" aria-controls="svc03">
+          <h3>Program &amp; campaign execution</h3><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="svc03"><div>
+          <p class="promise">Lead the delivery of high-impact initiatives, start to finish.</p>
+        <ul>
+          <li>Full lifecycle program management</li>
+          <li>Campaign orchestration</li>
+          <li>Cross-functional coordination</li>
+          <li>Agency &amp; vendor management</li>
+          <li>Budget oversight</li>
+          <li>Timeline management</li>
+        </ul>
+        <p class="delivers"><b>Delivers</b>Workback schedules &middot; program management frameworks &middot; launch plans &middot; campaign performance reporting</p>
+        </div></div>
+      </div>
+
+      <div class="svc">
+        <p class="n">04</p>
+        <button class="acc" type="button" aria-expanded="false" aria-controls="svc04">
+          <h3>Marketing operations &amp; systems</h3><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="svc04"><div>
+          <p class="promise">Build scalable marketing infrastructure that reports on itself.</p>
+        <ul>
+          <li>Marketing stack design</li>
+          <li>CRM integration (Salesforce, HubSpot)</li>
+          <li>Analytics and reporting systems</li>
+          <li>Attribution frameworks</li>
+          <li>Marketing automation</li>
+          <li>Operational dashboards</li>
+        </ul>
+        <p class="delivers"><b>Delivers</b>Marketing ops architecture &middot; reporting dashboards &middot; data infrastructure &middot; attribution model</p>
+        </div></div>
+      </div>
+
+      <div class="svc">
+        <p class="n">05</p>
+        <button class="acc" type="button" aria-expanded="false" aria-controls="svc05">
+          <h3>Cross-functional leadership</h3><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="svc05"><div>
+          <p class="promise">Keep product, sales, marketing and leadership pointed at the same outcome.</p>
+        <ul>
+          <li>Executive reporting</li>
+          <li>Stakeholder alignment</li>
+          <li>RACI / DACI frameworks</li>
+          <li>Board-level reporting</li>
+          <li>Change management</li>
+          <li>Vendor management</li>
+        </ul>
+        <p class="delivers"><b>Delivers</b>Executive marketing reports &middot; alignment frameworks &middot; operational cadences &middot; governance models</p>
+        </div></div>
+      </div>
+
+      <div class="svc">
+        <p class="n">06</p>
+        <button class="acc" type="button" aria-expanded="false" aria-controls="svc06">
+          <h3>Performance optimization</h3><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="svc06"><div>
+          <p class="promise">Continuously improve marketing ROI against a real baseline.</p>
+        <ul>
+          <li>Campaign performance analysis</li>
+          <li>Funnel optimization</li>
+          <li>Experimentation frameworks</li>
+          <li>Growth testing roadmaps</li>
+          <li>AI-driven marketing workflows</li>
+        </ul>
+        <p class="delivers"><b>Delivers</b>Growth experiment backlog &middot; marketing performance reports &middot; optimization plans</p>
+        </div></div>
+      </div>
+
+    </div>
+
+    <div class="usecases">
+      <h4>Companies bring me in when they need</h4>
+      <p class="uclist">To launch a new product<span>/</span>To scale marketing from 0 to 1<span>/</span>To prepare for Series A or B growth<span>/</span>To build the first marketing team<span>/</span>To fix broken marketing operations<span>/</span>To reposition the brand narrative<span>/</span>To prepare for IPO or acquisition</p>
+    </div>
+  </div>
+</section>
+
+<section class="pkg-sec" id="engagement">
+  <div class="wrap">
+    <p class="kicker">Engagement</p>
+    <h2 class="hd">Impact drivers</h2>
+    <div class="pkgs">
+
+      <div class="pkg">
+        <p class="label">Starter</p>
+        <button class="acc" type="button" aria-expanded="false" aria-controls="pkg1">
+          <h3>Fractional Head of Marketing</h3><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="pkg1"><div>
+          <p class="best">Best for early-stage companies that need strategic guidance and a direction to run in.</p>
+        <p class="commit">Scope on request</p>
+        <ul>
+          <li>Marketing strategy development</li>
+          <li>GTM advisory</li>
+          <li>Campaign planning</li>
+          <li>Leadership alignment</li>
+          <li>KPI frameworks</li>
+        </ul>
+        </div></div>
+      </div>
+
+      <div class="pkg">
+        <p class="label">Growth</p>
+        <button class="acc" type="button" aria-expanded="false" aria-controls="pkg2">
+          <h3>Fractional VP Marketing</h3><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="pkg2"><div>
+          <p class="best">Best for Series A and B companies scaling execution past what the founder can carry.</p>
+        <p class="commit">Scope on request</p>
+        <ul>
+          <li>Strategy and execution oversight</li>
+          <li>Campaign and launch leadership</li>
+          <li>Marketing operations design</li>
+          <li>Cross-functional program management</li>
+          <li>Vendor and agency oversight</li>
+          <li>Executive reporting</li>
+        </ul>
+        </div></div>
+      </div>
+
+      <div class="pkg">
+        <p class="label">Scale</p>
+        <button class="acc" type="button" aria-expanded="false" aria-controls="pkg3">
+          <h3>Fractional CMO</h3><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="pkg3"><div>
+          <p class="best">Best for companies preparing for major growth, a raise, or an exit.</p>
+        <p class="commit">Scope on request</p>
+        <ul>
+          <li>Full marketing leadership</li>
+          <li>Team building and hiring</li>
+          <li>Marketing infrastructure</li>
+          <li>Multi-channel campaigns</li>
+          <li>Brand transformation</li>
+          <li>Board-level reporting</li>
+          <li>Growth experimentation</li>
+        </ul>
+        </div></div>
+      </div>
+
+    </div>
+
+    <p class="blabel">Add-on programs</p>
+    <div class="banners">
+      <div class="banner">
+        <button class="acc bannerbtn" type="button" aria-expanded="false" aria-controls="add1">
+          <span class="bname">Product launch program</span><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="add1"><div>
+          <p>Launch strategy, campaign development, messaging and positioning, execution management. Priced per launch.</p>
+        </div></div>
+      </div>
+      <div class="banner">
+        <button class="acc bannerbtn" type="button" aria-expanded="false" aria-controls="add2">
+          <span class="bname">Brand system development</span><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="add2"><div>
+          <p>Brand strategy, design system, voice and messaging, governance.</p>
+        </div></div>
+      </div>
+      <div class="banner">
+        <button class="acc bannerbtn" type="button" aria-expanded="false" aria-controls="add3">
+          <span class="bname">Marketing operations setup</span><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="add3"><div>
+          <p>CRM integration, automation, analytics dashboards, attribution framework.</p>
+        </div></div>
+      </div>
+    </div>
+
+    <p class="blabel">How this works</p>
+    <div class="banners">
+      <div class="banner">
+        <button class="acc bannerbtn" type="button" aria-expanded="false" aria-controls="why1">
+          <span class="bname">Why fractional</span><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="why1"><div>
+          <p>A senior marketing hire is a long search, a large package and a slow ramp. This is operator judgment in the room now, at a fraction of the cost and none of the hiring risk.</p>
+        </div></div>
+      </div>
+      <div class="banner">
+        <button class="acc bannerbtn" type="button" aria-expanded="false" aria-controls="why2">
+          <span class="bname">Who it fits</span><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="why2"><div>
+          <p>Seed to Series C. B2B SaaS, AI companies, developer platforms, marketplaces and consumer tech.</p>
+        </div></div>
+      </div>
+      <div class="banner">
+        <button class="acc bannerbtn" type="button" aria-expanded="false" aria-controls="why3">
+          <span class="bname">How it runs</span><span class="ixmark" aria-hidden="true"></span>
+        </button>
+        <div class="accdetail" id="why3"><div>
+          <p>Three-month minimum. Monthly retainer. Hybrid working, embedded with the leadership team rather than bolted on beside it.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="talk">
+  <div class="wrap">
+    <p class="kicker">Start a conversation</p>
+    <h2 class="hd">Tell me what&rsquo;s stuck</h2>
+    <p class="mail" id="email">ritzmpindi@gmail.com</p>
+    <button class="copy" id="copy" type="button">Copy address</button>
+    <div class="backlink">
+      <a href="./#work">&larr; The work</a>
+      <a href="./#index">Background</a>
+      <a href="https://www.linkedin.com/in/ritz-mpindi-047686101" target="_blank" rel="me noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>&copy; 2026 Ritz Mpindi</span><span>C&Oslash;NVERGENCE &middot; New York City</span></div>
+</footer>
+
+<script>
+(function(){
+  if(location.hash && location.hash !== '#top') return;
+  try{history.scrollRestoration='manual'}catch(e){}
+  window.scrollTo(0,0);
+  window.addEventListener('load',function(){window.scrollTo(0,0)});
+})();
+(function(){
+  var accs=document.querySelectorAll('.acc');
+  for(var i=0;i<accs.length;i++){
+    accs[i].addEventListener('click',function(){
+      var id=this.getAttribute('aria-controls'),panel=document.getElementById(id);
+      if(!panel)return;
+      var isOpen=panel.classList.toggle('open');
+      this.setAttribute('aria-expanded',isOpen?'true':'false');
+    });
+  }
+})();
+(function(){
+  var btn=document.getElementById('copy'),el=document.getElementById('email');
+  if(!btn||!el)return;
+  btn.addEventListener('click',function(){
+    var done=function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy address'},1800)};
+    var fallback=function(){try{var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected — press ⌘C';setTimeout(function(){btn.textContent='Copy address'},2600)}catch(e){}};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(el.textContent.trim()).then(done,fallback)}else{fallback()}
+  });
+})();
+</script>
+</body>
+</html>
