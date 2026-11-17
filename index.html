@@ -1406,7 +1406,7 @@ html{scroll-behavior:smooth}
     <div class="closing-cv" id="request">
       <p class="kicker">Curriculum vitae</p>
       <h2 class="hd hd-sm">Request the CV</h2>
-      <form id="cvform" name="cv-request" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <form id="cvform" name="cv-request" method="POST" action="/" novalidate>
         <input type="hidden" name="form-name" value="cv-request">
         <p hidden><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <div class="fields">
@@ -1533,7 +1533,7 @@ html{scroll-behavior:smooth}
   }
 })();
 (function(){
-  var ENDPOINT=''; /* set by the live build: '/' on Netlify, or a Formspree URL */
+  var ENDPOINT=''; /* empty: the request opens as an email to Ritz */
   var f=document.getElementById('cvform');
   if(!f)return;
   var out=document.getElementById('reqout'),txt=document.getElementById('reqtext'),ml=document.getElementById('reqmail');
